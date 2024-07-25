@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  frontend:
+    
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+
+    ports:
+      - "3000:3000"
+    
+    volumes:
+      - ./Frontend:/home/web
+
+    networks:
+      - dev-network
+
+  backend:
+
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+
+    ports:
+      - "8088:8088"
+    
+    volumes:
+      - ./Backend/sources:/home/web/sources
+
+    networks:
+      - dev-network
+
+  redis:
+    image: redis:latest
+    container_name: redis-server
+    ports:
+      - "6379:6379"
+    networks:
+      - dev-network
+      
+networks:
+  dev-network:
+    driver: bridge
