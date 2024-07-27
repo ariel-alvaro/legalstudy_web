@@ -1,0 +1,24 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap');
+
+.chat{
+    animation: slide 0.2s linear 0.5s 1 normal forwards;
+}
+
+@keyframes slide {
+    0%{
+        transform: translateY(-4.6rem);
+    }
+    25%{
+        transform: translateY(-9.2rem)
+    }
+    50%{
+        transform: translateY(-13.8rem)
+    }
+    75%{
+        transform: translateY(-18.4rem)
+    }
+    100%{
+        transform: translateY(-23rem)
+    }
+}

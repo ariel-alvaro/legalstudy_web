@@ -1,0 +1,65 @@
+{
+
+"Laboral":{
+
+    "despido":{"title": "ME DESPIDIERON",
+               "options": {"Explicacion": "El Despido directo, se da cuando el empleador decide finalizar la elación laboral, y puede ser sin causa o con justa causa. El primero de ellos, también llamado “incausado”, lo decide el  arbitrariamente, sin una causa aparente, o con una causa insuficiente o inexistente. En estos casos, genera el derecho del trabajador a cobrar ",
+                           "Cuanto me corresponde":""}},
+                        
+    "negro":{"title": "ESTOY TRABAJANDO EN NEGRO",
+                     "options": {"Explicacion": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio.",
+                                 "Trabajo Totalmente en Negro": "En este caso, jamás te dieron de alta en AFIP, no tenés recibo de sueldo, ni obra social ni ART. POdes dejar de trabajar en cualquier momento sin necesidad de que te despidan y hacer el reclamo correspondiente tanto de indemnización como multas.",
+                                 "Trabajo Mal Registrado": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio."}},
+
+    "renunciar":{"title": "ME QUIEREN HACER RENUNCIAR",
+                       "options": {"Explicacion": "Es muy común en la práctica que el empleador le pida al trabajador enviar la renuncia a través del correo Argentino a cambio de continuar trabajando en la empresa o de una suma indemnizatoria. NUNCA MANDES LA RENUNCIA ES UNA TRAMPA!. Ya que, si la envias, no solo perderas la mayoría de tus derechos sino que, su luego tu empleador no quiere abonarte nada de lo prometido, no tendras como reclamarle que te pague."}},
+
+    "paganmenos":{"title": "ME PAGAN MENOS",
+                   "options": {"Explicacion": "Es común que los empleadores paguen menos de lo que corresponde por ley. Para verificar si es así debes fijarte que convenio colectivo aplica para tu actividad y tarea realizada. Si no coincide con lo que te pagan podes reclamar diferencias salariales e incluso intimar para que te registren correctamente. Si no lo hacen podras darte por despedido y hacer el reclamo correspondiente."}},
+
+    "accidentetrabajo":{"title": "ACCIDENTES DE TRABAJO",
+                         "options": {"Explicacion": "Hecho súbito y violento que ocurra por el hecho o en ocasión del trabajo, como así también los ocurridos en el tránsito entre el domicilio del trabajador y el lugar del trabajo (accidente in itinere), siempre y cuando el trayecto no se modifique o altere por causas ajenas al trabajo.",
+                         "Accidente In Itinere": "Se da cuando el trabajador sufre un accidente cuando se desplaza desde su hogar hacia su lugar de trabajo y viceversa.",
+                         "Enfermedad Profesional": "Es un daño a la salud del trabajador que se produce a lo largo del tiempo producto del trabajo realizado."}},
+
+    "domestico":{"title": "EMPLEADA DOMESTICA",
+                 "options": {}}
+    
+},
+
+"Civil":{
+
+    "accidentetransito":{"title": "ACCIDENTES DE TRANSITO",
+               "options": {"Explicacion": "Está situación se da cuando tú empleador toma la decisión de dejarte sin trabajo con o sin una causa que lo justifique. Dependiendo el caso concreto deberá abonarte o no una indemnización.",
+                           "Con Causa": "Está situación se da cuando tú empleador toma la decisión de dejarte sin trabajo con o sin una causa que lo justifique. Dependiendo el caso concreto deberá abonarte o no una indemnización.",
+                           "Sin Causa": "En este caso tu empleador te despide sin dar justificación alguna. Si bien está en su derecho de hacerlo, deberá pagar las indemnizaciones correspondientes",
+                           "Cuanto me corresponde":""}},
+                        
+    "declaratoria":{"title": "DECLARATORIA DE HEREDEROS/SUCESIONES",
+                     "options": {"Explicacion": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio.",
+                                 "Trabajo Totalmente en Negro": "En este caso, jamás te dieron de alta en AFIP, no tenés recibo de sueldo, ni obra social ni ART. POdes dejar de trabajar en cualquier momento sin necesidad de que te despidan y hacer el reclamo correspondiente tanto de indemnización como multas.",
+                                 "Trabajo Mal Registrado": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio."}},
+
+    "desalojos":{"title": "DESALOJOS/CONTRATO DE LOCACIÓN/ADMINISTRACION DE INMUEBLES",
+                       "options": {"Explicacion": "Es muy común en la práctica que el empleador le pida al trabajador enviar la renuncia a través del correo Argentino a cambio de continuar trabajando en la empresa o de una suma indemnizatoria. NUNCA MANDES LA RENUNCIA ES UNA TRAMPA!. Ya que, si la envias, no solo perderas la mayoría de tus derechos sino que, su luego tu empleador no quiere abonarte nada de lo prometido, no tendras como reclamarle que te pague."}}
+
+},
+"Familiar":{
+
+    "divorcioexpress":{"title": "DIVORCIO EXPRESS",
+               "options": {"Explicacion": "Está situación se da cuando tú empleador toma la decisión de dejarte sin trabajo con o sin una causa que lo justifique. Dependiendo el caso concreto deberá abonarte o no una indemnización.",
+                           "Con Causa": "Está situación se da cuando tú empleador toma la decisión de dejarte sin trabajo con o sin una causa que lo justifique. Dependiendo el caso concreto deberá abonarte o no una indemnización.",
+                           "Sin Causa": "En este caso tu empleador te despide sin dar justificación alguna. Si bien está en su derecho de hacerlo, deberá pagar las indemnizaciones correspondientes",
+                           "Cuanto me corresponde":""}},
+                        
+    "alimentaria":{"title": "CUOTA ALIMENTARIA",
+                     "options": {"Explicacion": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio.",
+                                 "Trabajo Totalmente en Negro": "En este caso, jamás te dieron de alta en AFIP, no tenés recibo de sueldo, ni obra social ni ART. POdes dejar de trabajar en cualquier momento sin necesidad de que te despidan y hacer el reclamo correspondiente tanto de indemnización como multas.",
+                                 "Trabajo Mal Registrado": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio."}},
+
+    "filiacion":{"title": "FILIACION",
+                       "options": {"Explicacion": "Es muy común en la práctica que el empleador le pida al trabajador enviar la renuncia a través del correo Argentino a cambio de continuar trabajando en la empresa o de una suma indemnizatoria. NUNCA MANDES LA RENUNCIA ES UNA TRAMPA!. Ya que, si la envias, no solo perderas la mayoría de tus derechos sino que, su luego tu empleador no quiere abonarte nada de lo prometido, no tendras como reclamarle que te pague."}}
+
+}
+
+}

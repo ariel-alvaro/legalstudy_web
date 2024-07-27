@@ -1,0 +1,21 @@
+{
+    "Laboral": [
+        {"title": "me despidieron", "alias": "despido","imageName": "laboral/lab0.png"},
+        {"title": "estoy trabajando en negro", "alias": "negro", "imageName": "laboral/lab2.png"},
+        {"title": "me quieren hacer renunciar", "alias": "renunciar", "imageName": "laboral/lab4.png"},
+        {"title": "me pagan menos", "alias": "paganmenos", "imageName": "laboral/lab7.png"},
+        {"title": "accidentes de trabajo", "alias": "accidentetrabajo", "imageName": "laboral/lab1.png"},
+        {"title": "empleada domestica", "alias": "domestico", "imageName": "laboral/lab5.png"}
+    ],
+    "Civil": [
+        {"title": "accidentes de transito", "alias": "accidentetransito", "imageName": "civil/civ0.png"},
+        {"title": "declaratoria de herederos/sucesiones", "alias": "declaratoria", "imageName": "civil/civ1.png"},
+        {"title": "desalojos/contrato de locación/administracion de inmuebles", "alias": "desalojos", "imageName": "civil/civ2.png"}
+    ],
+    "Familiar": [
+        {"title": "divorcio express", "alias": "divorcioexpress", "imageName": "familia/fam0.png"},
+        {"title": "cuota alimentaria", "alias": "alimentaria", "imageName": "familia/fam1.png"},
+        {"title": "filiacion", "alias": "filiacion", "imageName": "familia/fam2.png"}
+    ]
+}
+

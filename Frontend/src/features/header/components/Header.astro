@@ -1,0 +1,89 @@
+---
+import { FaRegHandshake, FaSearchDollar} from "react-icons/fa";
+import { FaHandHoldingDollar } from "react-icons/fa6";
+import { BsHexagonFill } from "react-icons/bs";
+import { MdAccountBalance } from "react-icons/md";
+
+---
+
+<section class="center-col laptop:full-section">
+    <div class="w-full h-20">
+
+    </div>
+    <div class="h-52 center laptop:bg-comb bg-header bg-cover w-full laptop:h-2/5 bg-black relative opacity-70">
+        <div class="small-responsive bg-[#13151a] absolute bottom-0 rounded-t-full"></div>
+    </div>
+    
+    <div class="center-col w-full h-2/3 gap-8 laptop:gap-14">
+        <div class="relative">   
+            <BsHexagonFill className="w-16 h-16 laptop:w-32 laptop:h-32 text-zinc-700"/>
+            <div class="w-full h-full absolute top-0 center">
+                <MdAccountBalance className="w-8 h-8 laptop:w-20 laptop:h-20"/>
+            </div>
+        </div>
+        
+        <h2 class="text-3xl">¿Por que elegirnos?</h2>
+
+        <section class="w-full h-full center-col laptop:center-row-nomid gap-8">
+
+            <div class='center-col relative card'>
+                <img class="w-10 h-10 laptop:w-20 laptop:h-20 opacity-60 absolute -top-5 laptop:-top-10" src="static/header/compromiso.svg"/>
+                <h3 class="text-lg laptop:text-xl uppercase opacity-50 font-semibold">compromiso</h3>
+                
+
+                <p class="text-center text-sm laptop:text-[16px] opacity-70 font-light"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima maiores itaque dolorem consequatur delectus, debitis optio culpa laudantium adipisci modi error nam quas numquam ut deleniti eum! Nisi, suscipit dicta?</p>
+                
+            </div>
+            <div class='center-col relative card'>
+                <img class="w-10 h-10 laptop:w-20 laptop:h-20 opacity-60 absolute -top-5 laptop:-top-10" src="static/header/compromiso.svg"/>
+                <h3 class="text-lg laptop:text-xl uppercase opacity-50 font-semibold">compromiso</h3>
+                
+
+                <p class="text-center text-sm laptop:text-[16px] opacity-70 font-light"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima maiores itaque dolorem consequatur delectus, debitis optio culpa laudantium adipisci modi error nam quas numquam ut deleniti eum! Nisi, suscipit dicta?</p>
+                
+            </div>
+            <div class='center-col relative card'>
+                <img class="w-10 h-10 laptop:w-20 laptop:h-20 opacity-60 absolute -top-5 laptop:-top-10" src="static/header/compromiso.svg"/>
+                <h3 class="text-lg laptop:text-xl uppercase opacity-50 font-semibold">compromiso</h3>
+                
+
+                <p class="text-center text-sm laptop:text-[16px] opacity-70 font-light"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima maiores itaque dolorem consequatur delectus, debitis optio culpa laudantium adipisci modi error nam quas numquam ut deleniti eum! Nisi, suscipit dicta?</p>
+                
+            </div>
+        </section>
+        <!-- <div class='center-col-nomid card'>
+            <img class="w-20 h-20 opacity-60" src="static/header/celeridad.svg"/>
+            <h3 class="text-xl uppercase opacity-50 font-semibold">celeridad</h3>
+            
+
+            <p class="text-center text-[16px] opacity-70 font-light">Sabemos que los tiempos judiciales son absurdos, no obstante, nos empeñamos en hacer un seguimiento de cada caso con el fin de que avance lo más rápido posible, haciendole saber al cliente constantemente el estado de su causa.</p>
+            
+        </div>
+        <div class='center-col-nomid card'>
+            <img class="w-20 h-20 opacity-60" src="static/header/costos.svg"/>
+            <h3 class="text-xl uppercase opacity-50 font-semibold">costos</h3>
+            
+
+            <p class="text-center text-[16px] opacity-70 font-light">Estamos al tanto que el acceso a la justicia no es económico, por eso brindamos consulta telefónica gratuita y en la mayoria de los casos honorarios a resultado, sin que tengas que hacer un desembolso para iniciar tu causa.</p>
+            
+        </div> -->
+
+    </div>
+    
+</section>
+
+<style>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+    @layer components{
+        .card{
+            @apply w-[90%] h-40 laptop:w-[20rem] laptop:h-[16rem] monitor:w-[34rem] monitor:h-[15rem] bg-zinc-800 rounded-lg p-4 laptop:gap-2
+        }
+
+        .card-text{
+            @apply text-center text-[16px] opacity-70 font-light relative
+        }
+    }
+</style>

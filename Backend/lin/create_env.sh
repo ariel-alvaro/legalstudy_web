@@ -1,10 +1,4 @@
 
-if [ -d "../env/" ]; then
-    echo "---------------------------------------"
-    echo "'env' folder already exists!"
-    exit 1
-fi
-
 
 echo "____Creating Virtual Enviroment____"
 
