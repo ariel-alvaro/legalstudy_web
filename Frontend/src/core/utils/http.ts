@@ -1,5 +1,4 @@
-import { createContext } from "react";
-import { type IHTTPdetail, type IHTTPresponse, type IHttpOptions } from "./interfaces/core.interface";
+import { type IHTTPdetail, type IHTTPresponse, type IHttpOptions } from "@core/interfaces/core.interface";
 
 
 export class HttpRequest {

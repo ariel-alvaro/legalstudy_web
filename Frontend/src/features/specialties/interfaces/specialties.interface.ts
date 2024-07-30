@@ -5,9 +5,8 @@ export interface IOptionData{
 
 export interface IQuestions{
     title: string,
-    options: string[]
-    options_info: { [key: string]: string };
-    
+    options: { [key: string]: string }[];
+
 }
 
 

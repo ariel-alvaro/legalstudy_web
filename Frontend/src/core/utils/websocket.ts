@@ -1,5 +1,5 @@
-import type { IMessage, IMessageData } from "../features/chat/interfaces/chat.interface";
-import type { IWebSocket, TSocketMessageHandler } from "./interfaces/core.interface"
+import type { IMessage, IMessageData } from "@components/chat/interfaces/chat.interface";
+import type { TSocketMessageHandler } from "@core/interfaces/core.interface"
 
 export class WebSocketHandler{
     

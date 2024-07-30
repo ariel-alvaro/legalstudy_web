@@ -55,10 +55,17 @@ const { title } = Astro.props;
 
 
 	@layer components{
+
+		.full{
+			@apply w-full h-full
+		}
+		.screen{
+			@apply w-screen h-screen
+		}
+		.
 		.full-section{
 			@apply h-screen w-screen laptop:h-[60rem] monitor:h-[62rem];
 		}
-		
 		.col{
 			@apply flex flex-col
 		}

@@ -2,12 +2,12 @@
 import React, {useContext, useEffect, useRef, useState } from "react"
 import {IoIosArrowDown, IoIosArrowUp} from 'react-icons/io'
 import { BiSend } from "react-icons/bi";
-import type { IChat, IChatData, IMessage, IMessageData, IMessageProp } from "../../interfaces/chat.interface";
-import { ChatStatusEnum, MessageOriginEnum, MessageTypeEnum, UserTypeEnum, WebsocketTypeEnum } from "../../enums/chat.enum";
-import { WebSocketHandler } from "../../../../core/websocket";
-import { HttpRequest } from "../../../../core/http";
-import type { IHttpOptions, IHTTPresponse } from "../../../../core/interfaces/core.interface";
-import { HTTPMethodEnum } from "../../../../core/enums/core.enum";
+import type { IChat, IChatData, IMessage, IMessageData, IMessageProp } from "@components/chat/interfaces/chat.interface";
+import { ChatStatusEnum, MessageOriginEnum, MessageTypeEnum, UserTypeEnum, WebsocketTypeEnum } from "@components/chat/enums/chat.enum";
+import { WebSocketHandler } from "@core/utils/websocket";
+import { HttpRequest } from "@core/utils/http";
+import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
+import { HTTPMethodEnum } from "@core/enums/core.enum";
 import { FaUserCircle } from "react-icons/fa";
 
 
@@ -23,7 +23,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
     const [messages, setmessages] = useState<(JSX.Element | null)[]>([]);
     const [chatOpen, setChatOpen] = useState<boolean>(false)
     const [wsHandler, setWsHandler] = useState<WebSocketHandler>(new WebSocketHandler())
-
+    
     useEffect(()=>{
         // Scroll down if new message or open chat
         if(mainRef.current){
@@ -33,6 +33,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
     },[messages, open])
 
     useEffect(() => {
+        
         // Set open depending on screen width
         if (innerWidth >= 1024 || actual_user == UserTypeEnum.Admin){
             setOpen(true)
@@ -44,7 +45,11 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
             initializeWebSocket(chat_data.roomID)
             setHasDisconnected(chat_data.status === ChatStatusEnum.Closed)
 
-        }else{createChat()}
+        }
+
+        if(actual_user == UserTypeEnum.AnonymousUser){
+            createChat()
+        }
 
         // return () => {
         //     websocket_service.closeSocket(WebsocketTypeEnum.Chat)
@@ -66,7 +71,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
 
     const  createChat = async () => {
         
-        const create_url: string = "http://localhost:8088/api/v1/chat_create"
+        const create_url: string = "http://localhost:8000/api/v1/chat_create"
         const options: IHttpOptions = HttpRequest.generateOptions(create_url, {}) 
 
         const response: IHTTPresponse<IChat> = await HttpRequest.request<IChat>(HTTPMethodEnum.POST, options)
@@ -97,7 +102,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
     }
     
     const getMessages = async () => {
-        const get_url =  `http://localhost:8088/api/v1/chat_retrieve/${chat_data?.roomID}`
+        const get_url =  `http://localhost:8000/api/v1/chat_retrieve/${chat_data?.roomID}`
 
         const options: IHttpOptions = HttpRequest.generateOptions(get_url, {})
 
@@ -181,15 +186,14 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
         
 
     }
-
+    //&& chatOpen
     if(actual_user === UserTypeEnum.Admin && chatOpen){
-        
         return(
-            <section className={` ${open && innerWidth < 1024 ? 'slide-up h-full': 'h-auto'} w-full z-40 fixed laptop:static bottom-0 laptop:right-3 laptop:h-full laptop:w-full laptop:min-h`}>
+            <section className={` ${open ? 'slide-up h-full': 'h-auto'} w-full z-50 fixed bottom-0 laptop:static `}>
 
-                {/* Head */}
-                <header className={` ${open && innerWidth < 1024 ? "h-[10%]" : "h-10"} w-full bg-slate-500 flex items-center p-7 gap-4 laptop:h-[10%] `}>
-                    <section className="flex gap-4 items-center">
+            {/* Head */}
+            <header className={` ${open && innerWidth < 1024 ? "h-[10%]" : "h-10"} w-full bg-slate-500 flex items-center p-7 gap-4 laptop:h-[10%] `}>
+                <section className="flex gap-4 items-center">
                         <div className="w-10 h-10 rounded-full bg-red-50">
                             <FaUserCircle className=" w-full h-full"/>
                         </div>
@@ -197,59 +201,57 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
                             <h3 className="text-white text-xl">Cliente: {chat_data?.client_data.name}</h3>
                             <h3 className="text-white text-xl">Telefono:  {chat_data?.client_data.cellphone}</h3>
                         </div>
-                    </section>
-                    <span className={`h-3 w-3 rounded-full ${!hasDisconnect ? "bg-green-500" : "bg-red-600" }  opacity-75`}></span>
+                </section>
+                <span className={`h-3 w-3 rounded-full ${!hasDisconnect ? "bg-green-500" : "bg-red-600" }  opacity-75`}></span>
                     
-                    <div className="cursor-pointer absolute right-6" onClick={() => {setOpen(!open)}}>   
-                        { innerWidth < 1024 ?
-                        <div>
-                            {open ? <IoIosArrowDown className="h-8 w-8 text-white "/> : <IoIosArrowUp className="h-8 w-8 text-white"/>}
-                        </div>: null}
-                    </div>
-                    
-                    
-                </header>
-                {/* Body */}
+                <div className="cursor-pointer absolute right-6" onClick={() => {setOpen(!open)}}>   
+                    { innerWidth < 1024 ?
+                    <div>
+                        {open ? <IoIosArrowDown className="h-8 w-8 text-white "/> : <IoIosArrowUp className="h-8 w-8 text-white"/>}
+                    </div>: null}
+                </div>
                 
-                {open ?
-                <main className={`w-full laptop:h-[80%] h-[85%] bg-slate-700 p-4 overflow-y-auto `} ref={mainRef}>
-                    {/* <ComponentMap components={messages}/> */}
-                    {messages.map((elem, index)=>(
-                        <div key={index}>
-                            {elem}
+                
+            </header>
+            {/* Body */}
+            
+            {open ?
+            <main className={`w-full laptop:h-[80%] h-[85%] bg-slate-700 p-4 overflow-y-auto `} ref={mainRef}>
+                {/* <ComponentMap components={messages}/> */}
+                {messages.map((elem, index)=>(
+                    <div key={index}>
+                        {elem}
+                    </div>
+                ))}
+            </main> : null}
+
+            {open ?
+            <footer className={`h-[5%] w-full bg-slate-700 flex items-center laptop:h-[10%]`}>
+                
+                {chat_data?.status != ChatStatusEnum.Closed && ! hasDisconnect ? 
+                    (<>
+                        <input type="text" className="w-[90%] h-full bg-slate-700 text-white opacity-80 text-laptop border-2 border-zinc-900 px-2" ref={inputMessageRef} 
+                        onKeyDown={(e)=>{ if (e.key === "Enter"){ handleInput() }
+                        }}/>
+                    
+                        <div className="w-[10%] h-full bg-slate-600 flex justify-center items-center cursor-pointer" onClick={handleInput} >
+                            
+                            <BiSend className=" text-stone-800 h-7 w-7"/>
                         </div>
-                    ))}
-                </main> : null}
-
-                {open ?
-                <footer className={`h-[5%] w-full bg-slate-700 flex items-center laptop:h-[10%]`}>
-                    
-                    {chat_data?.status != ChatStatusEnum.Closed && ! hasDisconnect ? 
-                        (<>
-                            <input type="text" className="w-[90%] h-full bg-slate-700 text-white opacity-80 text-laptop border-2 border-zinc-900 px-2" ref={inputMessageRef} 
-                            onKeyDown={(e)=>{ if (e.key === "Enter"){ handleInput() }
-                            }}/>
-                        
-                            <div className="w-[10%] h-full bg-slate-600 flex justify-center items-center cursor-pointer" onClick={handleInput} >
-                                
-                                <BiSend className=" text-stone-800 h-7 w-7"/>
-                            </div>
-                        </>)
-                    :null}
-                    
+                    </>)
+                :null}
 
 
-    
-                </footer>: null}
+            </footer>: null}
 
 
 
-            </section>
-
+        </section>
         )
     }
+    
         
-    if(chatOpen){
+    if(chatOpen && actual_user != UserTypeEnum.Admin){
         return(
             <section className={` ${open ? 'slide-up h-full': 'h-auto'} w-full z-50 fixed bottom-0 laptop:right-3 laptop:w-[27rem] laptop:h-auto `}>
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { SectionEnum } from "../../enums/specialities.enum"
-import "../../styles/specialties.css"
-import {type IOption, type IQuestions } from "../../interfaces/specialties.interface"
-import FAQ from "../../utils/specialties.service";
+import { SectionEnum } from "@components/specialties/enums/specialities.enum"
+import "@components/specialties/styles/specialties.css"
+import {type IOption, type IQuestions } from "@components/specialties/interfaces/specialties.interface"
+import FAQ from "@components/specialties/utils/specialties.service";
 
 
 export default function Options(){

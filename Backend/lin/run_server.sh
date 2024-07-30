@@ -9,4 +9,4 @@ echo "____Running server...____"
 
 cd ../sources
 
-python3 manage.py runserver 192.168.0.75:8088
+python3 manage.py runserver 0.0.0.0:8088

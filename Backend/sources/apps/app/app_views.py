@@ -98,23 +98,23 @@ class ChatCreateAPIView(CreateAPIView):
 
 
 class ChatRetrieveAPIView(RetrieveAPIView):
-    authentication_classes = [SessionAuthentication, TokenAuthCookie]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, TokenAuthCookie]
+    # permission_classes = [IsAuthenticated]
 
     lookup_field = 'roomID'
     queryset = models.Chat.objects.all()
     serializer_class = app_serializers.ChatSerializer
 
 class ChatDeleteAPIView(DestroyAPIView):
-    authentication_classes = [SessionAuthentication, TokenAuthCookie]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, TokenAuthCookie]
+    # permission_classes = [IsAuthenticated]
 
     lookup_field = "roomID"
     queryset = models.Chat.objects.all()
     
 class ChatDeleteAllAPIView(DestroyAPIView):
-    authentication_classes = [SessionAuthentication, TokenAuthCookie]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, TokenAuthCookie]
+    # permission_classes = [IsAuthenticated]
 
     queryset = models.Chat.objects.all()
 
@@ -130,8 +130,8 @@ class ChatDeleteAllAPIView(DestroyAPIView):
 
 
 class ChatListAPIView(ListAPIView):
-    authentication_classes = [SessionAuthentication, TokenAuthCookie]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, TokenAuthCookie]
+    # permission_classes = [IsAuthenticated]
 
     queryset = models.Chat.objects.all()
     serializer_class = app_serializers.ChatSerializer
