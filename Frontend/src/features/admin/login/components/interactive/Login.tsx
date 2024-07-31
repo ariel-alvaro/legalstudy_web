@@ -13,7 +13,7 @@ export default function Login() {
 
     
 
-    const url = "http://localhost:8088/auth/login"
+    const url = "http://localhost:8088/api/v1/auth/login/"
 
 
 
@@ -27,7 +27,7 @@ export default function Login() {
         }
 
         const options: IHttpOptions = HttpRequest.generateOptions<IRequestUser>(url, RequestUser)
-        const response: IHTTPresponse<any> = await HttpRequest.request<any>(HTTPMethodEnum.POST, options)
+        const response: IHTTPresponse<any> = await HttpRequest.request<any>(HTTPMethodEnum.POST, options, true)
 
         if(response.status != 200){
             //toast warning logic
@@ -35,7 +35,7 @@ export default function Login() {
         }
         
         
-        window.location.replace("/administrador/home")
+        window.location.replace("/administrator/home")
         
     }
 

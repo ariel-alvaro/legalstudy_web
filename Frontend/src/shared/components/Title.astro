@@ -1,0 +1,25 @@
+---
+import { MdAccountBalance } from "react-icons/md";
+
+interface Props {
+	title: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<section class="flex flex-col gap-5 items-center z-10 mt-10">
+    <h2 class="text-4xl text-center text-white">{title}</h2>
+
+    <div class="flex items-center gap-1">
+
+        <div class="w-8 h-0.5 bg-gold-color"></div>
+        <MdAccountBalance className="w-6 h-6 text-gold-color"/>
+        <div class="w-8 h-0.5 bg-gold-color"></div>
+
+    </div>
+
+    <p class="text-sm mt-5">{description}</p>
+
+</section>

@@ -1,16 +1,25 @@
 ---
+import Stats from '@components/stats/components/Stats.astro';
 import Chat from '../features/chat/components/interactive/Chat';
 import { UserTypeEnum } from '../features/chat/enums/chat.enum';
 import Header from '../features/header/components/Header.astro';
 import Specialties from '../features/specialties/components/Specialties.astro';
 
 import Layout from '../layouts/Layout.astro';
+import Title from '@shared/components/Title.astro';
+import Reviews from '@components/reviews/components/Reviews.astro';
+import Inmobiliario from '@components/inmobiliario/components/Inmobiliario.astro';
+import Footer from '@components/footer/components/Footer.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<Header/>
 		<Specialties/>
+		<Stats/>
+		<Inmobiliario/>
+		<Reviews/>
+		<Footer/>
 		<!-- <Chat actual_user={UserTypeEnum.AnonymousUser} client:load/> -->
 	</main>
 </Layout>

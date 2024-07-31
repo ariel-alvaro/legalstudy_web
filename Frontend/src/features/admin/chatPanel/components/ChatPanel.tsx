@@ -7,12 +7,14 @@ import type { IChat, IChatData } from "@components/chat/interfaces/chat.interfac
 import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
 import { HttpRequest } from "@core/utils/http";
 import { HTTPCodeEnum, HTTPMethodEnum } from "@core/enums/core.enum";
+import WithAuth from "@components/admin/withAuth/components/WithAuth";
 
-export default function ChatPanel(){
+function ChatPanel(){
 
     const [chatSelected, setChatSelected] = useState<IChatData | undefined>()
 
     const setChat = (chat: IChat) => {
+        setChatSelected(undefined);
         console.log("entre")
         let chat_data: IChatData = {
             roomID: chat.roomID,
@@ -23,7 +25,7 @@ export default function ChatPanel(){
             }
         }
 
-        setChatSelected(chat_data)
+        setChatSelected(chat_data);
     }
 
     const closeChat = () => {
@@ -35,7 +37,7 @@ export default function ChatPanel(){
 
 
             <section className="laptop:full laptop:bg-red-700">
-                {chatSelected != undefined ? <Chat actual_user={UserTypeEnum.Admin} chat_data={chatSelected}/> : null }
+                {chatSelected != undefined ? <Chat key={chatSelected.roomID} actual_user={UserTypeEnum.Admin} chat_data={chatSelected}/> : null }
             </section>
 
             <Chats setChat={setChat}/>
@@ -52,7 +54,7 @@ function Chats({setChat}: {setChat: (chat:IChat) => void}){
 
     useEffect(()=>{
         getChats()
-        //connectAdmin()
+        connectAdmin()
         //setLoading(false)
     
     },[])
@@ -160,7 +162,7 @@ function Chats({setChat}: {setChat: (chat:IChat) => void}){
                                     <h3 className="text-lg font-semibold">{chat.client.name}</h3>
                                     <p className="text-muted-foreground">+54 {chat.client.cellphone}</p>
                                 </div>
-                                <button className="bg-white rounded-md p-2">Connect</button>
+                                <button className="bg-white rounded-md p-2" onClick={()=>{setChat(chat)}}>Open</button>
                             </div>
                         ))
                     }
@@ -177,3 +179,4 @@ function Chats({setChat}: {setChat: (chat:IChat) => void}){
     
 }
 
+export default WithAuth(ChatPanel);

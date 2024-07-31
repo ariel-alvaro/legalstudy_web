@@ -33,7 +33,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
     },[messages, open])
 
     useEffect(() => {
-        
+        console.log("helloooo")
         // Set open depending on screen width
         if (innerWidth >= 1024 || actual_user == UserTypeEnum.Admin){
             setOpen(true)

@@ -34,6 +34,7 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+		
 	}
 	html {
 		font-family: system-ui, sans-serif;
@@ -62,9 +63,11 @@ const { title } = Astro.props;
 		.screen{
 			@apply w-screen h-screen
 		}
-		.
 		.full-section{
-			@apply h-screen w-screen laptop:h-[60rem] monitor:h-[62rem];
+			@apply laptop:h-[60rem] monitor:h-[62rem];
+		}
+		.medium-section{
+			@apply laptop:h-[30rem] monitor:h-[35rem];
 		}
 		.col{
 			@apply flex flex-col
@@ -84,7 +87,6 @@ const { title } = Astro.props;
 		.bg-comb{
 			@apply bg-cover bg-center bg-no-repeat bg-local
 		}
-
 		.small-responsive{
 			@apply w-52 h-5 laptop:w-[40rem] laptop:h-10 monitor:w-[50rem] monitor:h-10
 		}

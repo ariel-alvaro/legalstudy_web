@@ -1,0 +1,26 @@
+---
+import Incrementer from './Incrementer';
+
+
+
+interface Props {
+    number: number
+    symbol: string
+};
+
+const {number, symbol} = Astro.props;
+
+
+---
+
+
+<div class="center-col gap-10 laptop:h-full laptop:w-[25rem] laptop:center laptop:gap-5 z-10">
+    <slot></slot>
+    <div class="center-col gap-2 laptop:gap-3">
+        <div id="counter" class="h-2">
+            <Incrementer toNumber={100} symbol={symbol} client:visible/>
+        </div>
+        <h2 class="text-4xl laptop:text-5xl"></h2>
+        <p class="text-gold-color text-center">casos exitosos</p>
+    </div>
+</div>

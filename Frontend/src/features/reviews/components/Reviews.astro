@@ -1,0 +1,14 @@
+---
+import ReviewSlider from "@components/reviews/components/ReviewSlider"
+import Title from "@shared/components/Title.astro"
+---
+
+<section class="medium-section center-col-nomid bg-comb bg-reviews relative">
+    <div class="absolute full bg-red-700 opacity-60"></div>
+    <Title title="Opinones de nuestros clientes"/>
+    <section class="z-10 full center">
+        <ReviewSlider client:visible/>
+    </section>
+    
+
+</section>

@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/features/*"],
+      "@shared/*": ["src/shared/*"],
       "@core/*": ["src/core/*"]
     },
     "jsx": "react-jsx",

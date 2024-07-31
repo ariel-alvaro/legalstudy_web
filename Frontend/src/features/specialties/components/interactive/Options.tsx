@@ -42,7 +42,7 @@ export default function Options(){
 
     return(
 
-        <section className="w-full h-full center-col-nomid gap-20">
+        <section className="full center-col-nomid gap-20">
 
             <div>
 
@@ -54,7 +54,7 @@ export default function Options(){
             
 
             {questions == null ?
-            <section className="center flex-wrap gap-5 w-[65rem] h-[45rem] ">
+            <section className="full center flex-wrap gap-5 laptop:w-[65rem] laptop:h-[45rem] ">
 
                 {
                     options.map((option, index)=>(

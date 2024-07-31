@@ -1,0 +1,66 @@
+---
+import Title from "@shared/components/Title.astro";
+import Item from "@components/inmobiliario/components/Item.astro"
+
+---
+
+<section class="monitor:full-section center-col-nomid">
+
+    <Title title="ADMINISTRACION DE CONSORCIOS"/>
+
+    <section class="center-col-nomid monitor:center h-2/3">
+
+        <Item title="auditoria contable inicial" color="bg-blue-300">
+            <img class="w-2/3 h-2/3" src="static/other/auditoria.svg"/>
+        </Item>
+        <div class="separator bg-blue-300"></div>
+        <Item title="auditoria contable inicial" color="bg-blue-400">
+            <img class="w-2/3 h-2/3" src="static/other/auditoria.svg"/>
+        </Item>
+        <div class="separator bg-blue-400"></div>
+        <Item title="auditoria contable inicial" color="bg-blue-500">
+            <img class="w-2/3 h-2/3" src="static/other/auditoria.svg"/>
+        </Item>
+        <div class="separator bg-blue-500"></div>
+        <Item title="auditoria contable inicial" color="bg-blue-600">
+            <img class="w-2/3 h-2/3" src="static/other/auditoria.svg"/>
+        </Item>
+        <div class="separator bg-blue-600"></div>
+        <Item title="auditoria contable inicial" color="bg-blue-700">
+            <img class="w-2/3 h-2/3" src="static/other/auditoria.svg"/>
+        </Item>
+        <div class="separator bg-blue-700"></div>
+        <Item title="auditoria contable inicial" color="bg-blue-800">
+            <img class="w-2/3 h-2/3" src="static/other/auditoria.svg"/>
+        </Item>
+        <div class="separator bg-blue-800"></div>
+        <Item title="auditoria contable inicial" color="bg-blue-900">
+            <img class="w-2/3 h-2/3" src="static/other/auditoria.svg"/>
+        </Item>
+
+
+
+
+
+
+    </section>
+
+</section>
+
+<style>
+    @tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+    @layer components {
+        
+        .container{
+            @apply w-52 h-52  monitor:h-[11rem] monitor:w-[11rem] bigmonitor:w-[14rem] bigmonitor:h-[14rem] 
+        }
+
+        .separator{
+            @apply relative right-20 monitor:right-0 h-10 w-1 monitor:w-10 monitor:h-1 bg-red-800
+        }
+
+    }
+</style>
