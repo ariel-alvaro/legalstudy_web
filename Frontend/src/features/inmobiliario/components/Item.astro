@@ -12,7 +12,7 @@ const {title, color} = Astro.props;
         </div>
             
     </div>
-    <div class="w-44 h-32 monitor:absolute left-[100%] monitor:w-full monitor:left-0 monitor:top-[100%] ">
+    <div class="w-44 h-32 center monitor:block monitor:mt-4 monitor:absolute left-[100%] monitor:w-full monitor:left-0 monitor:top-[100%] ">
         <h3 class="title leading-snug">{title}</h3>
     </div>
     <!--  -->
@@ -30,7 +30,7 @@ const {title, color} = Astro.props;
         }
 
         .title{
-            @apply break-words text-center uppercase font-bold text-3xl monitor:text-2xl  bigmonitor:text-4xl leading-7
+            @apply break-words text-center uppercase font-bold text-lg monitor:text-lg  bigmonitor:text-2xl leading-7
         }
     }
 </style>

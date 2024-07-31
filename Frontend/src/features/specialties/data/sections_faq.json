@@ -1,68 +1,241 @@
 {
 
-    "Laboral":{
-    
-        "despido":{"title": "ME DESPIDIERON",
-                   "options": [
-                    {"Explicacion":"hjoaaaaaaaa"},
-                    {"Pregunta1": " rapeeeeeeeeeeeeeeeeeeeeeeeeee"}
-                   ]},
-                            
-        "negro":{"title": "ESTOY TRABAJANDO EN NEGRO",
-                         "options": {"Explicacion": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio.",
-                                     "Trabajo Totalmente en Negro": "En este caso, jamás te dieron de alta en AFIP, no tenés recibo de sueldo, ni obra social ni ART. POdes dejar de trabajar en cualquier momento sin necesidad de que te despidan y hacer el reclamo correspondiente tanto de indemnización como multas.",
-                                     "Trabajo Mal Registrado": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio."}},
-    
-        "renunciar":{"title": "ME QUIEREN HACER RENUNCIAR",
-                           "options": {"Explicacion": "Es muy común en la práctica que el empleador le pida al trabajador enviar la renuncia a través del correo Argentino a cambio de continuar trabajando en la empresa o de una suma indemnizatoria. NUNCA MANDES LA RENUNCIA ES UNA TRAMPA!. Ya que, si la envias, no solo perderas la mayoría de tus derechos sino que, su luego tu empleador no quiere abonarte nada de lo prometido, no tendras como reclamarle que te pague."}},
-    
-        "paganmenos":{"title": "ME PAGAN MENOS",
-                       "options": {"Explicacion": "Es común que los empleadores paguen menos de lo que corresponde por ley. Para verificar si es así debes fijarte que convenio colectivo aplica para tu actividad y tarea realizada. Si no coincide con lo que te pagan podes reclamar diferencias salariales e incluso intimar para que te registren correctamente. Si no lo hacen podras darte por despedido y hacer el reclamo correspondiente."}},
-    
-        "accidentetrabajo":{"title": "ACCIDENTES DE TRABAJO",
-                             "options": {"Explicacion": "Hecho súbito y violento que ocurra por el hecho o en ocasión del trabajo, como así también los ocurridos en el tránsito entre el domicilio del trabajador y el lugar del trabajo (accidente in itinere), siempre y cuando el trayecto no se modifique o altere por causas ajenas al trabajo.",
-                             "Accidente In Itinere": "Se da cuando el trabajador sufre un accidente cuando se desplaza desde su hogar hacia su lugar de trabajo y viceversa.",
-                             "Enfermedad Profesional": "Es un daño a la salud del trabajador que se produce a lo largo del tiempo producto del trabajo realizado."}},
-    
-        "domestico":{"title": "EMPLEADA DOMESTICA",
-                     "options": {}}
-        
+    "Laboral": {
+        "despido": {
+        "title": "ME DESPIDIERON",
+        "options": [
+            {
+            "¿Que tipos de despido existen?": "A) Despido Directo. Se da cuando es el empleador el que decide finalizar la relación laboral y puede ser sin causa o con justa causa. En el primer caso, se genera el derecho del trabajador a cobrar indemnización. Por otro lado, en el Despido con justa causa, el empleador extingue la relación laboral, por algun incumplimiento grave del trabajador y no debe pagar ninguna indemnización. B) Despido Indirecto. En este caso, es el trabajador el que da por finalizado el vínculo (se da por despedido) luego de intimar a su empleador por telegrama ante un incumplimiento de este ultimo, con derecho a ser indemnizado por despido."
+            },
+            {
+            "¿Como se debe notificar un despido?": "Lo más común es hacerlo por carta documento al domicilio del trabajador pero también el empleador puede hacerlo mediante un escribano público. HAY QUE RECORDAR QUE EL DESPIDO VERBAL SIN LOS REQUISITOS ESTIPULADOS POR LEY NO ES VÁLIDO."
+            },
+            {
+            "¿Que debo cobrar si me despiden?": "Te deben pagar la indemnización correspondiente que integra: Antigüedad, Preaviso, Días trabajados, Integración del mes de despido, aguinaldo y vacaciones proporcionales. En caso de trabajo en negro se suman multas."
+            }
+        ]
+        },
+        "negro": {
+        "title": "TRABAJO EN NEGRO",
+        "options": [
+            {
+            "¿Cuando hay trabajo en negro?": "Llamamos así a la NO registración de la relación laboral, como así también a la defectuosa registración como es el caso de consignar en el recibo de sueldo una fecha de ingreso posterior a la real, o un sueldo menor al realmente percibido."
+            },
+            {
+            "¿Que se puede hacer en este caso?": "En estos casos deberemos reclamar al empleador que registre correctamente la relación laboral, mediante el envío de un telegrama laboral gratuito, bajo apercibimiento de que, si no lo hace, nos daremos por despedidos."
+            },
+            {
+            "¿Y si aún asi el empleador no me registra correctamente?": "Si el empleador no procede a la registración solicitada, el trabajador tiene derecho a considerarse despedido (despido indirecto) y reclamar judicialmente el cobro de la indemnización por despido con el incremento de las multas de la ley 24.013."
+            },
+            {
+            "¿Que sucede si me despiden estando en negro?": "Se podrán reclamar además de las indemnizaciones por despido las multas establecidas en la ley 25.323."
+            }
+        ]
+        },
+        "renunciar": {
+        "title": "ME QUIEREN HACER RENUNCIAR",
+        "options": [
+            {
+            "¿Qué debo hacer si mi jefe me pide que renuncie?": "Es importante que sepas que si renunciás, perdés el derecho a cobrar la indemnización que te corresponde. Es frecuente que los empleadores soliciten la renuncia a sus trabajadores con la promesa del pago de una indemnización a cambio; el problema es que una vez que renuncies, tu empleador no está obligado a abonarla, por lo que podría no hacerlo y de ese modo, si renunciaste no cobrarías nada. ATENTO LO EXPLICADO, NO TE PUEDEN OBLIGAR A RENUNCIAR PORQUE PERDES TUS DERECHOS A RECLAMAR, POR LO TANTO, ANTES DE IR AL CORREO Y ENVIAR EL TELEGRAMA DE RENUNCIA HACETE ASESORAR POR UN ABOGADO!!!"
+            },
+            {
+            "¿Que pasa si me piden que renuncie pero quieren que siga trabajando en la empresa?": "En este caso el empleador quiere evitar pagarte la indemnización que corresponde intentando que pierdas tu antigüedad. Pedir la renuncia y volver a contratar al trabajador es un fraude laboral."
+            },
+            {
+            "¿Me conviene renunciar?": "No. Nunca conviene renunciar, porque al hacerlo se pierden todos los derechos. Si hay malestar en el trabajo, antes de renunciar conviene ver si la empresa no está incumpliendo alguna de sus obligaciones laborales, para poder reclamar lo que le corresponde."
+            },
+            {
+            "Me dicen que si no renuncio no me pagan. ¿Qué hago?": "No renuncie, pues perderá todos sus derechos. Lo que le deben se puede reclamar sin renunciar."
+            },
+            {
+            "Me ofrecen un arreglo. ¿Cómo sé si me conviene?": "En primer lugar, no debe contestar en seguida. Siempre se puede tomar 48 horas para pensar. Y entonces consultar con su abogado. Para evaluar si el arreglo le conviene, es necesaria una entrevista personal."
+            }
+        ]
+        },
+        "domestico": {
+        "title": "EMPLEADAS DOMÉSTICAS",
+        "options": [
+            {
+            "¿A qué se considera trabajo en casas particulares?": "• Tareas de limpieza, de mantenimiento u otras actividades típicas del hogar.\n• Cuidado, asistencia y acompañamiento no terapéutico de personas enfermas o con discapacidad."
+            },
+            {
+            "¿Como es el procedimiento para reclamar algún incumplimiento por parte de mi empleador?": "Los conflictos que surjan de la relación laboral entre el empleador y la trabajadora doméstica, tramitaran primero ante el ministerio de trabajo con el fin de llegar a un acuerdo en una audiencia de conciliación y caso contrario se avanzará por la vía judicial. Siempre será necesario contar con un abogado laboral que lo asesore y defienda."
+            },
+            {
+            "¿En caso de despido, que debe pagare el empleador a la empleada doméstica?": "Indemnización por despido, Preaviso, Integración mes despido, aguinaldo y vacaciones proporcionales más los días trabajados del mes. En caso de que la trabajadora esté en negro o mal registrada (por menos horas): La indemnización por despido se duplicará."
+            }
+        ]
+        },
+        "accidentetrabajo": {
+        "title": "ACCIDENTES DE TRABAJO",
+        "options": [
+            {
+            "¿Qué es un accidente de trabajo?": "Todo accidente que ocurra mientas estás trabajando es un accidente de trabajo y tenés derecho a que la ART y/o tu empleador te asista y te pague la indemnización que te corresponde en caso de padecer una incapacidad producto del mismo. Consultanos, somos especialistas en accidentes y contamos en el equipo con un médico legista con mucha experiencia."
+            },
+            {
+            "¿Qué es un accidente in itinere?": "Un accidente de trabajo in intinere es aquel accidente que ocurre mientas estás en camino a tu trabajo o mientras estás de regreso a tu casa después de tu jornada laboral. Todo trabajador tiene derecho a que la ART lo asista y le pague la indemnización."
+            },
+            {
+            "¿Qué debo hacer ante un accidente de trabajo?": "Si sufriste un accidente de trabajo debés informarlo a tu empleador y ellos deben hacer la denuncia ante la Aseguradora de Riesgos del Trabajo (ART). Si no la hace el empleador, el trabajador puede llamar directamente a la ART para denunciar la ocurrencia del accidente. La ART debe revisarte y brindarte el tratamiento correspondiente a la lesión. En caso de que exista una incapacidad debe indemnizarte. Consultanos y el médico legista de nuestro equipo te revisará para determinar tu incapacidad."
+            },
+            {
+            "Tuve un accidente hace meses pero nunca se hizo la denuncia a la ART ¿Puedo iniciar mi reclamo ahora?": "Sí. Si sufriste un accidente de trabajo pero no se hizo la denuncia ante la Aseguradora de Riesgos del Trabajo (ART) igualmente tenés derecho a iniciar tu reclamo laboral."
+            },
+            {
+            "La ART rechazó mi denuncia, pero me sigue doliendo ¿qué puedo hacer?": "Si hiciste la denuncia ante la ART, te revisaron y te rechazaron el siniestro o te dijeron que no es un accidente de trabajo y no te dieron tratamiento o te dieron de alta pero te sigue doliendo, tenés derecho a hacer el reclamo laboral para que te otorguen el tratamiento y te paguen la indemnización que corresponda por la incapacidad laboral que padezcas."
+            },
+            {
+            "En la ART me dijeron que no tengo incapacidad ¿qué se puede hacer?": "Es muy frecuente que la ART no determine incapacidad laboral y en consecuencia, a pesar de tus dolencias o limitaciones físicas, te den el alta sin incapacidad y en consecuencia no te paguen la indemnización que te corresponde. En ese caso buscaremos un médico especializado en medicina del trabajo para que determine el porcentaje de incapacidad que te corresponde y así podremos iniciar tu reclamo laboral en la SRT."
+            },
+            {
+            "¿Puedo hacer el reclamo sólo contra la ART sin demandar a mi empleador? No quiero perder mi trabajo.": "Sí. Todo trabajador puede reclamar sólo contra la ART y de esta manera evitar conflictos con el empleador. Su reclamo a la ART NO TIENE NADA QUE VER NI AFECTA LA RELACIÓN LABORAL QUE TENGA CON SU EMPLEADOR."
+            },
+            {
+            "¿Qué es una Enfermedad Profesional y cuando necesito un Abogado Laboral?": "Una enfermedad profesional es una afección a la salud del trabajador que nace como consecuencia del trabajo no obstante no surge de manera inmediata (como el accidente de trabajo) sino que se desarrollan a lo largo del tiempo y sus manifestaciones tardan en aparecer (ej. hernias, várices, sindrome túnel carpeano, etc)."
+            },
+            {
+            "¿Como se procede en el caso una enfermedad profesional?": "Ante la primera manifestación de la misma, hay que hacer la denuncia ante la ART para que te brinden atención médica y te realicen los estudios correspondientes. Si es necesaria una intervención quirúrgica deberá hacerse cargo la ART y luego corresponderá el pago de una indemnización."
+            }
+        ]
+        }
+    },
+    "Civil": {
+        "accidentetransito": {
+        "title": "ACCIDENTES DE TRANSITO",
+        "options": [
+            {
+            "¿TUVISTE UN ACCIDENTE DE TRÁNSITO?": "Si conduciendo su vehículo (Auto, Moto, Bicicleta) como dueño o usuario del mismo sufre un accidente de tránsito por culpa de otro conductor (sea que conduzca auto, moto, ciclomotor, micro o colectivo) Ud. tendría derecho a la reparación integral de todos los daños sufridos: Daños físicos a su persona (lesiones) como materiales de su vehículo."
+            },
+            {
+            "¿TUVISTE LESIONES?": "En el caso de haber lesionados, te recomendamos que llames a una ambulancia y a la Policía. Caso contrario, es indispensable que recibas atención médica a la brevedad (por más que consideres que sean golpes leves); así recibirás atención y tendrás constancia de haber pasado por una guardia."
+            },
+            {
+            "¿QUIÉN TUVO LA CULPA EN UN ACCIDENTE?": "Cada accidente tiene sus particularidades; por lo que te aconsejamos que nos consultes así te asesoramos SIN compromiso. Podrías reclamar una indemnización, No te quedes con las dudas!!"
+            },
+            {
+            "ENGAÑOS DE LAS ASEGURADORAS": "Muchas veces, a las pocas horas de haber sido víctima de un accidente, las compañías de seguros contactan al accidentado ofreciendoles un supuesto arreglo económico superador. Ése acuerdo solo beneficiará a la cia. de seguros, NO firme nada SIN ASESORARSE"
+            },
+            {
+            "¿CÓMO ACTUAR ANTE UN ACCIDENTE DE TRÁNSITO?": "• Pedirle al otro conductor los datos de su licencia de conducir y su seguro\n• Darle al otro conductor los datos de tu licencia de conducir y del seguro de tu auto.\n• Llamar a una ambulancia o concurrir a centro de salud para que te revisen. Si interviene la policía, también tenés que darle los datos de tu licencia de conducir y del seguro del auto.\n• Del auto con el que chocaste: patente, marca y nombre de la empresa de seguro.\n• Del conductor: nombre, DNI, domicilio y teléfono.\n• Del asegurado, si no es la persona que maneja el auto al momento del accidente: nombre, DNI, domicilio y teléfono\nSi en el momento del siniestro, Ud. iba o volvía de su trabajo; también podemos reclamarle a la ART. De igual manera podes reclamar por más que no hayas tenido seguro al momento del accidente."
+            }
+        ]
+        },
+        "declaratoria": {
+        "title": "DECLARATORIA DE HEREDEROS",
+        "options": [
+            {
+            "¿QUE ES UNA DECLARATORIA DE HEREDEROS?": "Es la resolución judicial que se dicta al final del proceso sucesorio. La declaratoria de herederos es una resolución dictada por un juez por la cual se reconoce el carácter de heredero universal a una o varias personas de una persona fallecida."
+            },
+            {
+            "¿CÓMO SE INICIA?": "Se hace una presentación judicial (por medio de un abogado), en la cual se declaran las identidades de los que heredan, se denuncian sus domicilios y se acompaña toda la documentación que acredite el vínculo de parentesco."
+            },
+            {
+            "¿CUÁNDO ES NECESARIO TRAMITAR LA DECLARATORIA DE HEREDEROS?": "Cuando han quedado bienes registrables a nombre del fallecido, es necesario hacer una declaratoria de herederos para poder cambiar la titularidad de los mismos, ya sea a favor de los herederos o para venderlos a terceros. De igual manera, es necesaria para ciertos trámites personales donde se requiere la declaratoria para poder acreditar el carácter de heredero (ejemplo poder retirar dinero de la cuenta de una persona fallecida)"
+            },
+            {
+            "¿CUÁNDO SE HACE EL TRACTO ABREVIADO?": "El Tracto Abreviado, tiene su razón de ser cuando se trata de vender un bien mueble o inmueble registrable (como por ejemplo auto, casa) que está inscripto a nombre de una persona que esta fallecida."
+            },
+            {
+            "¿DÓNDE DEBE INICIARSE?": "El Proceso Sucesorio debe llevarse adelante en el lugar donde tenía su último domicilio el fallecido."
+            },
+            {
+            "¿QUÉ DOCUMENTACIÓN SE NECESITA PARA INICIARLO?": "Toda la necesaria para acreditar la defunción y el vínculo (Ejemplo, DNI, partidas de nacimiento, acta de matrimonio)."
+            },
+            {
+            "¿QUIÉNES HEREDAN LOS BIENES?": "Cuando fallece una persona y no deja testamento, la ley es la que determina quiénes heredan los bienes, sean el cónyuge, los hijos, padres, hermanos, etc. En caso que el difunto hubiese otorgado testamento, ya sea escrito a mano o por escritura pública, heredan los que figuren en el mismo, siempre y cuando se ajuste a derecho, ya que la ley no permite que se afecten los porcentajes de los herederos forzosos. Cuando una persona decide otorgar testamento, es importante que se asesore con un abogado."
+            },
+            {
+            "¿UN SOLO HEREDERO PUEDE INICIAR LA SUCESION, AUNQUE EL RESTO NO QUIERA?": "La ley le da la posibilidad de iniciar la sucesión a cualquiera de los familiares o personas que hereden, aunque el resto no esté de acuerdo. Pero tendrá que avisar a los demás a través de cedulas de notificación, tarea efectuada por el abogado patrocinante."
+            }
+        ]
+        }
     },
     
-    "Civil":{
-    
-        "accidentetransito":{"title": "ACCIDENTES DE TRANSITO",
-                   "options": {"Explicacion": "Está situación se da cuando tú empleador toma la decisión de dejarte sin trabajo con o sin una causa que lo justifique. Dependiendo el caso concreto deberá abonarte o no una indemnización.",
-                               "Con Causa": "Está situación se da cuando tú empleador toma la decisión de dejarte sin trabajo con o sin una causa que lo justifique. Dependiendo el caso concreto deberá abonarte o no una indemnización.",
-                               "Sin Causa": "En este caso tu empleador te despide sin dar justificación alguna. Si bien está en su derecho de hacerlo, deberá pagar las indemnizaciones correspondientes",
-                               "Cuanto me corresponde":""}},
-                            
-        "declaratoria":{"title": "DECLARATORIA DE HEREDEROS/SUCESIONES",
-                         "options": {"Explicacion": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio.",
-                                     "Trabajo Totalmente en Negro": "En este caso, jamás te dieron de alta en AFIP, no tenés recibo de sueldo, ni obra social ni ART. POdes dejar de trabajar en cualquier momento sin necesidad de que te despidan y hacer el reclamo correspondiente tanto de indemnización como multas.",
-                                     "Trabajo Mal Registrado": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio."}},
-    
-        "desalojos":{"title": "DESALOJOS/CONTRATO DE LOCACIÓN/ADMINISTRACION DE INMUEBLES",
-                           "options": {"Explicacion": "Es muy común en la práctica que el empleador le pida al trabajador enviar la renuncia a través del correo Argentino a cambio de continuar trabajando en la empresa o de una suma indemnizatoria. NUNCA MANDES LA RENUNCIA ES UNA TRAMPA!. Ya que, si la envias, no solo perderas la mayoría de tus derechos sino que, su luego tu empleador no quiere abonarte nada de lo prometido, no tendras como reclamarle que te pague."}}
-    
-    },
-    "Familiar":{
-    
-        "divorcioexpress":{"title": "DIVORCIO EXPRESS",
-                   "options": {"Explicacion": "Está situación se da cuando tú empleador toma la decisión de dejarte sin trabajo con o sin una causa que lo justifique. Dependiendo el caso concreto deberá abonarte o no una indemnización.",
-                               "Con Causa": "Está situación se da cuando tú empleador toma la decisión de dejarte sin trabajo con o sin una causa que lo justifique. Dependiendo el caso concreto deberá abonarte o no una indemnización.",
-                               "Sin Causa": "En este caso tu empleador te despide sin dar justificación alguna. Si bien está en su derecho de hacerlo, deberá pagar las indemnizaciones correspondientes",
-                               "Cuanto me corresponde":""}},
-                            
-        "alimentaria":{"title": "CUOTA ALIMENTARIA",
-                         "options": {"Explicacion": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio.",
-                                     "Trabajo Totalmente en Negro": "En este caso, jamás te dieron de alta en AFIP, no tenés recibo de sueldo, ni obra social ni ART. POdes dejar de trabajar en cualquier momento sin necesidad de que te despidan y hacer el reclamo correspondiente tanto de indemnización como multas.",
-                                     "Trabajo Mal Registrado": "Trabajar en negro es simplemente trabajar sin un contrato laboral de por medio."}},
-    
-        "filiacion":{"title": "FILIACION",
-                           "options": {"Explicacion": "Es muy común en la práctica que el empleador le pida al trabajador enviar la renuncia a través del correo Argentino a cambio de continuar trabajando en la empresa o de una suma indemnizatoria. NUNCA MANDES LA RENUNCIA ES UNA TRAMPA!. Ya que, si la envias, no solo perderas la mayoría de tus derechos sino que, su luego tu empleador no quiere abonarte nada de lo prometido, no tendras como reclamarle que te pague."}}
-    
+    "Familiar": {
+        "divorcioexpres": {
+        "title": "DIVORCIO EXPRÉS",
+        "options": [
+            {
+            "¿ES NECESARIO QUE HAYA UNA CAUSA QUE JUSTIFIQUE MI PEDIDO DE DIVORCIO?": "No. Antes se exigía una causa para justificar el pedido: adulterio, injurias, abandono, etc. Hoy no es necesario: podés divorciarte solamente porque querés hacerlo."
+            },
+            {
+            "PARA PEDIR EL DIVORCIO ¿ES NECESARIO ESPERAR UN TIEMPO DESDE LA CELEBRACIÓN DEL MATRIMONIO?": "No, podés divorciarte en cualquier momento. No hay que esperar que pase un tiempo de casados."
+            },
+            {
+            "¿ES NECESARIO QUE AMBOS PIDAMOS EL DIVORCIO O ESTEMOS DE ACUERDO EN DIVORCIARNOS?": "NO. El divorcio lo puede pedir cualquiera de los contrayentes de manera unilateral o ambos en conjunto (comun acuerdo)"
+            },
+            {
+            "¿TENGO QUE CUMPLIR CON ALGÚN REQUISITO?": "Sí. Con el pedido de divorcio tenés que acompañar \"una propuesta reguladora\" que indique quién se queda viviendo en la casa, cómo se distribuirá el tiempo con los hijos, lo relacionado con la cuota alimentaria, etc. Esa propuesta se puede presentar en conjunto o por separado dependiendo si el divorcio es pedido de forma unilateral o de común acuerdo."
+            },
+            {
+            "¿QUÉ PASA SI NO NOS PONEMOS DE ACUERDO CON LA PROPUESTA PARA REGULAR EL DIVORCIO?": "El desacuerdo sobre la propuesta reguladora no suspende la sentencia de divorcio. En todo caso, las partes seguirán discutiendo después las consecuencias de la disolución del vínculo."
+            },
+            {
+            "¿NECESITO UN ABOGADO PARA PEDIR MI DIVORCIO?": "Si. El divorcio sigue siendo judicial, y en cualquier petición hecha a un juez es necesario para las partes contar con patrocinio letrado."
+            }
+        ]
+        },
+        "cuotaalimentaria": {
+        "title": "CUOTA ALIMENTARIA",
+        "options": [
+            {
+            "¿HASTA QUE EDAD SE PAGA LA CUOTA ALIMENTARIA?": "Los progenitores tienen la obligación de darle alimentos a sus hijos hasta los 21 años o hasta los 25 años si estudian o se capacitan en un arte u oficio y no pueden mantenerse por sus propios medios."
+            },
+            {
+            "¿QUE INCLUYE LA CUOTA ALIMENTARIA?": "Incluye los gastos derivados de la vivienda, alimentación, salud, educación y esparcimiento de los menores."
+            },
+            {
+            "¿CUANTO DEBO PASAR EN CONCEPTO DE CUOTA ALIMENTARIA?": "Se tendrá en cuenta el nivel de vida de los menores y los ingresos de ambos progenitores para comprobar cuanto pueden aportar. En otras palabras depende de la calidad de vida del alimentado y de la capacidad del alimentante."
+            },
+            {
+            "¿ES NECESARIO IR A JUICIO PARA PACTAR CUOTA ALIMENTARIA?": "No siempre. Puede pactarse extrajudicialmente entre las partes y plasmarse en un acuerdo que luego deberá ser homologado por un juez. Si no llegaran a ponerse de acuerdo, habrá que ir a juicio y será un juez quien determine la suma a ser pagada."
+            },
+            {
+            "¿QUE ES EL DEBER DE COMUNICACIÓN'": "Es el derecho que tiene el progenitor que no convive con su hijo de tener una comunicación fluida con él. En definitiva, es lo que antes se llamaba \"régimen de visitas\" y consiste en la posibilidad que tiene el progenitor que no convive con el menor de poder pasear, compartir momentos, que pueda quedarse a dormir en su casa según la edad y necesidades del hijo."
+            }
+        ]
+        },
+        "filiacion": {
+        "title": "FILIACIÓN",
+        "options": [
+            {
+            "¿EN QUE CONSISTE?": "La acción de filiación, es aquella que se realiza con la finalidad de reclamar el reconocimiento de un vínculo paterno o impugnar aquél que se le ha atribuido. En otras palabras, se realiza con el fin de que un padre reconozca a su hijo y cumpla con sus deberes y obligaciones."
+            },
+            {
+            "¿Como es el procedimiento?": "En estos complejos casos, generalmente se lo cita al demandado (a la persona que la madre señala como el padre del niño) a una audiencia, y en caso de desconocimiento de la paternidad se lo vuelve a citar para realizar una prueba de ADN."
+            },
+            {
+            "¿Que pasa si el padre no se realiza el ADN?": "Si el demandado no se presenta a la prueba de ADN, esto se va a tomar como grave presunción en su contra. Si se presenta y se realiza la prueba, el resultado definirá la paternidad."
+            },
+            {
+            "OTRAS ACCIONES QUE SE PUEDEN REALIZAR SON:": "IMPUGNACIÓN: Impugnación de la filiación para el caso de personas que crean ser progenitores de un menor que está reconocido por alguien que, en realidad, no sería su padre biológico. Esta acción la puede iniciar tanto el propio hijo o el tercero que tenga un interés legítimo por creer que puede ser el padre biológico del menor.\nNULIDAD: Acción de nulidad del reconocimiento, la cual la puede iniciar aquella persona que, habiendo reconocido a un menor, cree que no es el padre biológico del niño. Este acto busca atacar la validez sustancial del acto jurídico que contiene el reconocimiento paterno."
+            }
+        ]
+        },
+        "desalojos": {
+        "title": "DESALOJOS",
+        "options": [
+            {
+            "¿En que consiste?": "Un desalojo, significa obligar a través de las vías legales, a abandonar un inmueble por parte de quien no tiene derecho a ocuparlo, ya sea porque nunca lo tuvo o ya haya vencido el derecho a ocupación del mismo, a instancias de quien tiene, supuestamente, sobre ese inmueble un derecho legítimo."
+            },
+            {
+            "¿Contra quién procede?": "Los demandados, pueden ser tanto intrusos, inquilinos con contrato vencido o que adeuden alquileres o no hayan cumplido las obligaciones de uso debido de la cosa, deudas que hayan llevado al remate de la propiedad, etcétera."
+            }
+        ]
+        },
+        "ejecuciondealquileres": {
+        "title": "EJECUCIÓN DE ALQUILERES",
+        "options": [
+            {
+            "¿Cuando es procedente?": "En el caso de que usted alquile un inmueble y su inquilino no cumple con el pago de los alquileres por más de dos periodos consecutivos, tiene derecho a tomar acciones ejecutivas para el cobro de los mismos. Lo mismo sucede con la falta de pago de expensas"
+            },
+            {
+            "¿Contra quién se acciona en este caso?": "La obligación de pago recae tanto en el inquilino y el garante permitiendo de esa forma ejecutar los bienes necesarios de aquel con el fin de cubrir las obligaciones incumplidas. Ambos son responsables por el destino que le dan al inmueble y la falta de cuidado del mismo."
+            }
+        ]
+        }
     }
+      
+      
     
-    }
-    
+}

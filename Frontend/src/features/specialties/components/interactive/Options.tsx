@@ -70,13 +70,24 @@ export default function Options(){
 
             :
             
-            <section className="center-col-nomid flex-wrap gap-10 w-[65rem] h-[45rem] ">
+            <section className="center-col-nomid overflow-scroll gap-10 w-[65rem] h-[45rem] ">
 
                 {
                     (questions.options).map((question, index)=>(
-                        <div key={index} className="w-full">
-                            <button className="w-full h-32 bg-slate-700" onClick={()=>{setSelectedQuestion(Object.keys(question)[0])}}>{Object.keys(question)[0]}</button>
-                            {selectedQuestion ==  Object.keys(question)[0] ? <p className="appear bg-red-700 w-full text-center">{Object.values(question)}</p> : null}
+                        // <div key={index} className="w-full">
+                        //     <button className="w-full h-32 bg-slate-700" onClick={()=>{setSelectedQuestion(Object.keys(question)[0])}}>{Object.keys(question)[0]}</button>
+                        //     {selectedQuestion ==  Object.keys(question)[0] ? <p className="appear bg-red-700 w-full text-center">{Object.values(question)}</p> : null}
+                        // </div>
+
+                        <div className="bg-muted rounded-lg border border-muted-foreground p-6 laptop:w-[40rem]">
+                            <div className="space-y-4">
+                                <h2 className="text-2xl font-bold text-primary-foreground text-center" onClick={()=>{setSelectedQuestion(Object.keys(question)[0])}}>{Object.keys(question)[0]}</h2>
+                                {selectedQuestion ==  Object.keys(question)[0] ?
+                                <p className="appear center text-muted-foreground ">
+                                    {Object.values(question)}
+                                </p>
+                                :null}
+                            </div>
                         </div>
                     ))
                 }
