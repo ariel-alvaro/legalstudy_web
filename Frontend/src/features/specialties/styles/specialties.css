@@ -20,3 +20,22 @@
     animation: appear 0.2s ease-out;
     overflow: hidden;
 }
+
+@keyframes slideDown {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+.element {
+    animation: slideDown 0.5s ease-out;
+}
+  
+.suave {
+    transition: all 0.3s ease-in-out;
+}

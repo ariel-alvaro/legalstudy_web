@@ -15,7 +15,12 @@ export default {
 		},
 		extend: {
 			colors: {
-				'gold-color': '#eee150'
+				'primary': '#f8f5f2',
+				'secondary': '#f45d48',
+				'boxes': '#078080',
+				'text1': '#222525',
+				'text2': '#232323',
+				'gold-color': '#B79A5D'
 			}
 		},
 	},

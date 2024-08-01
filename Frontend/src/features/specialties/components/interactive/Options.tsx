@@ -24,6 +24,7 @@ export default function Options(){
         setSection(section);
         setOptions(options);
         setQuestions(null);
+        setSelectedQuestion("");
     }   
 
     const handleSelection = (alias: string) => {
@@ -40,25 +41,26 @@ export default function Options(){
         setSelectedQuestion(question);
     }
 
+
     return(
 
-        <section className="full center-col-nomid gap-20">
+        <section className="full center-col-nomid gap-8 monitor:gap-2 bigmonitor:gap-8">
 
             <div>
 
-                <button className=" text-white h-full border-zinc-600 grow border-r-2 border-l-2 rounded-l-lg hover:bg-blue-600 focus:bg-blue-600 p-3" onClick={()=>{handleSection(SectionEnum.Laboral)}}>LABORAL</button>
-                <button className=" text-white h-full border-zinc-600 grow border-r-2 hover:bg-blue-600 focus:bg-blue-600 p-3" onClick={()=>{handleSection(SectionEnum.Civil)}}>CIVIL</button>
-                <button className=" text-white h-full border-zinc-600 grow border-r-2 rounded-r-lg hover:bg-blue-600 focus:bg-blue-600 p-3" onClick={()=>{handleSection(SectionEnum.Familiar)}}>FAMILIAR</button>
+                <button className=" text-boxes h-full border-zinc-600 grow border-r-2 border-l-2 rounded-l-lg hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Laboral)}}>LABORAL</button>
+                <button className=" text-boxes h-full border-zinc-600 grow border-r-2 hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Civil)}}>CIVIL</button>
+                <button className=" text-boxes h-full border-zinc-600 grow border-r-2 rounded-r-lg hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Familiar)}}>FAMILIAR</button>
 
             </div>
             
 
             {questions == null ?
-            <section className="full center flex-wrap gap-5 laptop:w-[65rem] laptop:h-[45rem] ">
+            <section className="element full center flex-wrap gap-5 mb-10 laptop:mb-0 laptop:w-[60rem] laptop:h-[28rem] bigmonitor:h-[45rem] monitor:w-[65rem] ">
 
                 {
                     options.map((option, index)=>(
-                        <div key={index} className="center w-80 h-80 rounded-lg bg-black relative cursor-pointer" onClick={()=>{handleSelection(option.alias)}}>
+                        <div key={index} className="center w-60 h-60 monitor:w-64 monitor:h-52 bigmonitor:w-80 bigmonitor:h-80 rounded-lg bg-black relative cursor-pointer" onClick={()=>{handleSelection(option.alias)}}>
                             <h2 className="uppercase font-bold text-3xl text-center z-10">{option.title}</h2>
                             <img src={`/static/${option.imageName}`} className="w-full h-full absolute opacity-65 rounded-lg"></img>
                             
@@ -69,9 +71,9 @@ export default function Options(){
             </section>
 
             :
-            
-            <section className="center-col-nomid overflow-scroll gap-10 w-[65rem] h-[45rem] ">
-
+ 
+            <section className="p-7 overflow-scroll gap-2  w-[60rem] monitor:h-[30rem] bigmonitor:h-[37rem] ">
+                
                 {
                     (questions.options).map((question, index)=>(
                         // <div key={index} className="w-full">
@@ -79,12 +81,13 @@ export default function Options(){
                         //     {selectedQuestion ==  Object.keys(question)[0] ? <p className="appear bg-red-700 w-full text-center">{Object.values(question)}</p> : null}
                         // </div>
 
-                        <div className="bg-muted rounded-lg border border-muted-foreground p-6 laptop:w-[40rem]">
-                            <div className="space-y-4">
-                                <h2 className="text-2xl font-bold text-primary-foreground text-center" onClick={()=>{setSelectedQuestion(Object.keys(question)[0])}}>{Object.keys(question)[0]}</h2>
+                        <div key={index} className="element bg-boxes cursor-pointer  mx-auto p-5 bigmonitor:p-8 rounded-lg border laptop:w-[55rem] mb-4">
+                            
+                            <div className="suave hover:scale-105 space-y-4 ">
+                                <h2 className="text-2xl font-bold text-center" onClick={()=>{setSelectedQuestion(Object.keys(question)[0])}}>{Object.keys(question)[0]}</h2>
                                 {selectedQuestion ==  Object.keys(question)[0] ?
-                                <p className="appear center text-muted-foreground ">
-                                    {Object.values(question)}
+                                <p className="appear text-text1 center text-muted-foreground">
+                                    <ConvertJumpText text={Object.values(question)[0]}/>
                                 </p>
                                 :null}
                             </div>
@@ -93,7 +96,7 @@ export default function Options(){
                 }
                 
             </section>
-            
+
             }
 
 
@@ -103,3 +106,16 @@ export default function Options(){
 
     )
 }
+function ConvertJumpText({text}: {text: string}) {
+    console.log(text.split(/\r?\n|\r|\n/g))
+    return (
+      <div>
+        {text.split('\n').map((linea, index) => (
+          <div key={index} className="text-center">
+            {linea}
+            <br />
+          </div>
+        ))}
+      </div>
+    );
+  };

@@ -2,15 +2,16 @@
 import { MdAccountBalance } from "react-icons/md";
 
 interface Props {
+    color?: string;
 	title: string;
     description?: string;
 }
 
-const { title, description } = Astro.props;
+const { color="primary", title, description } = Astro.props;
 ---
 
 <section class="flex flex-col gap-5 items-center z-10 mt-10">
-    <h2 class="text-4xl text-center text-white">{title}</h2>
+    <h2 class={`text-4xl text-center text-${color} uppercase font-semibold`}>{title}</h2>
 
     <div class="flex items-center gap-1">
 

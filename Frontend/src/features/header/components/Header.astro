@@ -3,51 +3,65 @@ import { FaRegHandshake, FaSearchDollar} from "react-icons/fa";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { BsHexagonFill } from "react-icons/bs";
 import { MdAccountBalance } from "react-icons/md";
+import Navbar from "./Navbar.astro";
 
 ---
 
-<section class="center-col laptop:full-section">
-    <div class="w-full h-20">
+<section class="center-col-nomid montior:full-section bg-primary">
 
-    </div>
-    <div class="h-52 center bg-header bg-cover w-full laptop:h-[30rem] bg-black relative opacity-70">
-        <div class="small-responsive bg-[#13151a] absolute -bottom-2 rounded-t-full"></div>
+    <Navbar/>
+
+    <div class="h-52 center bg-header bg-cover w-full laptop:h-[15rem] monitor:h-[16rem] bigmonitor:h-[29rem] bg-black relative opacity-90 z-10">
+        <div class="small-responsive bg-primary absolute -bottom-2 rounded-t-full"></div>
     </div>
     
-    <div class="center-col w-full h-2/3 gap-8 laptop:gap-14">
+    <div class="center-col w-full h-2/3 bigmonitor:gap-8 laptop:gap-3 z-20">
         <div class="relative">   
-            <BsHexagonFill className="w-16 h-16 laptop:w-32 laptop:h-32 text-zinc-700"/>
+            <BsHexagonFill className="w-16 h-16 laptop:w-20 laptop:h-20 text-secondary"/>
             <div class="w-full h-full absolute top-0 center">
-                <MdAccountBalance className="w-8 h-8 laptop:w-20 laptop:h-20"/>
+                <MdAccountBalance className="w-8 h-8 laptop:w-12 laptop:h-12"/>
             </div>
+            
         </div>
         
-        <h2 class="text-3xl">¿Por que elegirnos?</h2>
+        <h2 class="text-3xl mb-10 text-text2 uppercase font-semibold">¿Por que elegirnos?</h2>
 
-        <section class="w-full h-full center-col laptop:center-row-nomid gap-8">
+        <section class="w-full h-full center-col monitor:center-row-nomid bigmonitor:center gap-8 mb-10">
 
             <div class='center-col relative card'>
-                <img class="w-10 h-10 laptop:w-20 laptop:h-20 opacity-60 absolute -top-5 laptop:-top-10" src="static/header/compromiso.svg"/>
-                <h3 class="text-lg laptop:text-xl uppercase opacity-50 font-semibold">compromiso</h3>
-                
+                <div class="absolute -top-5 laptop:-top-10 rounded-full bg-primary">
+                    <img class="w-10 h-10 laptop:w-20 laptop:h-20 opacity-60 " src="static/header/compromiso.svg"/>
+                </div>
 
-                <p class="text-center text-sm laptop:text-[16px] opacity-70 font-light"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima maiores itaque dolorem consequatur delectus, debitis optio culpa laudantium adipisci modi error nam quas numquam ut deleniti eum! Nisi, suscipit dicta?</p>
+                <h3 class="text-lg laptop:text-xl uppercase opacity-80 font-semibold mt-7">compromiso</h3>
+                
+                <div class="h-full mt-4">
+                    <p class="card-text"> Una vez que una causa ingresa al estudio nos comprometemos de lleno a intentar conseguir el resultado más favorable para el cliente.</p>
+                </div>
+
                 
             </div>
             <div class='center-col relative card'>
-                <img class="w-10 h-10 laptop:w-20 laptop:h-20 opacity-60 absolute -top-5 laptop:-top-10" src="static/header/compromiso.svg"/>
-                <h3 class="text-lg laptop:text-xl uppercase opacity-50 font-semibold">compromiso</h3>
+                <div class="absolute -top-5 laptop:-top-10 rounded-full bg-primary">
+                    <img class="laptop:w-20 laptop:h-20 opacity-60" src="static/header/celeridad.svg"/>
+                </div>
+                <h3 class="text-lg laptop:text-xl uppercase opacity-80 font-semibold mt-7">celeridad</h3>
                 
-
-                <p class="text-center text-sm laptop:text-[16px] opacity-70 font-light"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima maiores itaque dolorem consequatur delectus, debitis optio culpa laudantium adipisci modi error nam quas numquam ut deleniti eum! Nisi, suscipit dicta?</p>
+                <div class="h-full mt-4">
+                    <p class="card-text">Entendemos que los tiempos judiciales son largos, pero seguimos cada caso de cerca para que avance lo más rápido posible, informando al cliente sobre el estado de su causa.</p>
+                </div>
                 
             </div>
             <div class='center-col relative card'>
-                <img class="w-10 h-10 laptop:w-20 laptop:h-20 opacity-60 absolute -top-5 laptop:-top-10" src="static/header/compromiso.svg"/>
-                <h3 class="text-lg laptop:text-xl uppercase opacity-50 font-semibold">compromiso</h3>
+                <div class="absolute -top-5 laptop:-top-10 rounded-full bg-primary">
+                    <img class="w-10 h-10 laptop:w-20 laptop:h-20 opacity-60" src="static/header/costos.svg"/>
+                </div>
+                <h3 class="text-lg laptop:text-xl uppercase opacity-80 font-semibold mt-7">costos</h3>
                 
-
-                <p class="text-center text-sm laptop:text-[16px] opacity-70 font-light"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima maiores itaque dolorem consequatur delectus, debitis optio culpa laudantium adipisci modi error nam quas numquam ut deleniti eum! Nisi, suscipit dicta?</p>
+                <div class="h-full mt-4">
+                    <p class="card-text"> Sabemos que el acceso a la justicia puede ser costoso, por eso ofrecemos consulta telefónica gratuita y, en muchos casos, honorarios basados en resultados, sin necesidad de pagar al iniciar.
+                    </p>
+                </div>
                 
             </div>
         </section>
@@ -56,7 +70,12 @@ import { MdAccountBalance } from "react-icons/md";
     </div>
     
 </section>
+<!-- 
+compromiso: Una vez que una causa ingresa al estudio nos comprometemos de lleno a intentar conseguir el resultado más favorable para el cliente.
+celeridad: Sabemos que los tiempos judiciales son absurdos, no obstante, nos empeñamos en hacer un seguimiento de cada caso con el fin de que avance lo más rápido posible, haciendole saber al cliente constantemente el estado de su causa.
+costos: Estamos al tanto que el acceso a la justicia no es económico, por eso brindamos consulta telefónica gratuita y en la mayoria de los casos honorarios a resultado, sin que tengas que hacer un desembolso para iniciar tu causa
 
+-->
 <style>
 	@tailwind base;
 	@tailwind components;
@@ -64,11 +83,11 @@ import { MdAccountBalance } from "react-icons/md";
 
     @layer components{
         .card{
-            @apply w-[90%] h-40 laptop:w-[20rem] laptop:h-[16rem] monitor:w-[34rem] monitor:h-[15rem] bg-zinc-800 rounded-lg p-4 laptop:gap-2
+            @apply w-[90%] h-40  monitor:w-[26rem] monitor:h-[11rem] bigmonitor:h-[13rem] bigmonitor:w-[35rem]  rounded-lg p-4 laptop:gap-2 bg-secondary text-text2
         }
 
         .card-text{
-            @apply text-center text-[16px] opacity-70 font-light relative
+            @apply text-center text-sm laptop:text-[16px] opacity-70 font-light
         }
     }
 </style>
