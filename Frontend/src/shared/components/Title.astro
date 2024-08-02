@@ -10,7 +10,7 @@ interface Props {
 const { color="primary", title, description } = Astro.props;
 ---
 
-<section class="flex flex-col gap-5 items-center z-10 mt-10">
+<section class="flex flex-col items-center z-10 mt-10 mb-4">
     <h2 class={`text-4xl text-center text-${color} uppercase font-semibold`}>{title}</h2>
 
     <div class="flex items-center gap-1">
@@ -21,6 +21,6 @@ const { color="primary", title, description } = Astro.props;
 
     </div>
 
-    <p class="text-sm mt-5">{description}</p>
+    <p class="w-4/5 laptop:w-full text-lg mt-5 text-gold-color text-center font-sans ">{description}</p>
 
 </section>

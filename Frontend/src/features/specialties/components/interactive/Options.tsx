@@ -2,15 +2,18 @@ import { useEffect, useState } from "react"
 import { SectionEnum } from "@components/specialties/enums/specialities.enum"
 import "@components/specialties/styles/specialties.css"
 import {type IOption, type IQuestions } from "@components/specialties/interfaces/specialties.interface"
-import FAQ from "@components/specialties/utils/specialties.service";
+import Specialties from "@components/specialties/utils/specialties.service";
+import { Indemnization } from "../Indemnization";
 
 
 export default function Options(){
     
     const [section, setSection] = useState<string>(SectionEnum.Laboral)
-    const [options, setOptions] = useState<IOption[]>(FAQ.list_options(SectionEnum.Laboral));
+    const [options, setOptions] = useState<IOption[]>(Specialties.list_options(SectionEnum.Laboral));
     const [questions, setQuestions] = useState<IQuestions | null>(null)
     const [selectedQuestion, setSelectedQuestion] = useState("");
+    const [isFired, setIsFired] = useState<boolean>(false);
+    const [isCalculo, setIsCalculo]= useState<boolean>(false);
 
 
     useEffect(()=>{
@@ -18,24 +21,35 @@ export default function Options(){
     },[questions])
 
 
-    
-    const handleSection = (section: string) => {
-        let options: IOption[] = FAQ.list_options(section);
-        setSection(section);
-        setOptions(options);
+    const reset = () => {
         setQuestions(null);
         setSelectedQuestion("");
+        setIsFired(false);
+        setIsCalculo(false);
+    }
+
+    const handleSection = (section: string) => {
+        let options: IOption[] = Specialties.list_options(section);
+        setSection(section);
+        setOptions(options);
+
+        reset();
     }   
 
     const handleSelection = (alias: string) => {
-        setQuestions(FAQ.list_faq(section, alias));
+        if(alias == "despido"){
+            setIsFired(true);
+        }
+
+        setQuestions(Specialties.list_faq(section, alias));
         console.log(questions)
     }
 
     const handleQuestion = (question: string) => {
-
+        console.log(question, selectedQuestion)
         if(question == selectedQuestion){
             setSelectedQuestion("");
+            return
         }
 
         setSelectedQuestion(question);
@@ -50,7 +64,7 @@ export default function Options(){
 
                 <button className=" text-boxes h-full border-zinc-600 grow border-r-2 border-l-2 rounded-l-lg hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Laboral)}}>LABORAL</button>
                 <button className=" text-boxes h-full border-zinc-600 grow border-r-2 hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Civil)}}>CIVIL</button>
-                <button className=" text-boxes h-full border-zinc-600 grow border-r-2 rounded-r-lg hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Familiar)}}>FAMILIAR</button>
+                <button className=" text-boxes h-full border-zinc-600 grow border-r-2 rounded-r-lg hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Familiar)}}>FAMILIA</button>
 
             </div>
             
@@ -72,19 +86,19 @@ export default function Options(){
 
             :
  
-            <section className="p-7 overflow-scroll gap-2  w-[60rem] monitor:h-[30rem] bigmonitor:h-[37rem] ">
+            <section className="overflow-scroll mb-10 laptop:mb-0 flex flex-col gap-2 w-[26rem] laptop:w-[60rem] laptop:h-[33rem] monitor:h-[34rem] bigmonitor:h-[42rem] relative">
                 
-                {
+                {!isCalculo ? 
                     (questions.options).map((question, index)=>(
                         // <div key={index} className="w-full">
                         //     <button className="w-full h-32 bg-slate-700" onClick={()=>{setSelectedQuestion(Object.keys(question)[0])}}>{Object.keys(question)[0]}</button>
                         //     {selectedQuestion ==  Object.keys(question)[0] ? <p className="appear bg-red-700 w-full text-center">{Object.values(question)}</p> : null}
                         // </div>
 
-                        <div key={index} className="element bg-boxes cursor-pointer  mx-auto p-5 bigmonitor:p-8 rounded-lg border laptop:w-[55rem] mb-4">
+                        <div key={index} className="element bg-boxes cursor-pointer mx-auto p-2 laptop:p-7 w-96 rounded-lg border laptop:w-[55rem] mb-4">
                             
-                            <div className="suave hover:scale-105 space-y-4 ">
-                                <h2 className="text-2xl font-bold text-center" onClick={()=>{setSelectedQuestion(Object.keys(question)[0])}}>{Object.keys(question)[0]}</h2>
+                            <div className="space-y-4 ">
+                                <h2 className="text-2xl font-bold text-center" onClick={()=>{handleQuestion(Object.keys(question)[0])}}>{Object.keys(question)[0]}</h2>
                                 {selectedQuestion ==  Object.keys(question)[0] ?
                                 <p className="appear text-text1 center text-muted-foreground">
                                     <ConvertJumpText text={Object.values(question)[0]}/>
@@ -93,8 +107,18 @@ export default function Options(){
                             </div>
                         </div>
                     ))
-                }
-                
+                :<Indemnization/>}
+
+                {isFired ? 
+                <div className="w-full h-10 center">
+                    <button className="bg-secondary text-primary-foreground hover:bg-boxes transition-colors rounded-md px-4 py-2 font-medium" onClick={()=>{
+                        setIsCalculo(true);
+                        setIsFired(false);
+                    }}>
+                        ¿Cuanto me corresponde?
+                    </button>
+                </div>
+                : null}
             </section>
 
             }

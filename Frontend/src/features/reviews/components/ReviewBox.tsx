@@ -9,7 +9,7 @@ export default function ReviewBox({review}: {review: IReview}){
     const Stars = [0,0,0,0,0]
 
     return(
-        <section className=" w-80 h-52 bg-white p-6 flex flex-col gap-2 shrink-0 text-black">
+        <section className="shadow1 w-80 h-52 bg-white p-6 flex flex-col gap-2 shrink-0 text-black">
             <div className="flex gap-4 justify-between">
 
                 <div className="w-full flex items-center gap-3 h-10">

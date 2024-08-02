@@ -148,11 +148,22 @@
             "¿UN SOLO HEREDERO PUEDE INICIAR LA SUCESION, AUNQUE EL RESTO NO QUIERA?": "La ley le da la posibilidad de iniciar la sucesión a cualquiera de los familiares o personas que hereden, aunque el resto no esté de acuerdo. Pero tendrá que avisar a los demás a través de cedulas de notificación, tarea efectuada por el abogado patrocinante."
             }
         ]
+        },
+        "ejecuciondealquileres": {
+            "title": "EJECUCIÓN DE ALQUILERES",
+            "options": [
+                {
+                "¿Cuando es procedente?": "En el caso de que usted alquile un inmueble y su inquilino no cumple con el pago de los alquileres por más de dos periodos consecutivos, tiene derecho a tomar acciones ejecutivas para el cobro de los mismos. Lo mismo sucede con la falta de pago de expensas"
+                },
+                {
+                "¿Contra quién se acciona en este caso?": "La obligación de pago recae tanto en el inquilino y el garante permitiendo de esa forma ejecutar los bienes necesarios de aquel con el fin de cubrir las obligaciones incumplidas. Ambos son responsables por el destino que le dan al inmueble y la falta de cuidado del mismo."
+                }
+            ]
         }
     },
     
     "Familiar": {
-        "divorcioexpres": {
+        "divorcioexpress": {
         "title": "DIVORCIO EXPRÉS",
         "options": [
             {
@@ -222,18 +233,8 @@
             "¿Contra quién procede?": "Los demandados, pueden ser tanto intrusos, inquilinos con contrato vencido o que adeuden alquileres o no hayan cumplido las obligaciones de uso debido de la cosa, deudas que hayan llevado al remate de la propiedad, etcétera."
             }
         ]
-        },
-        "ejecuciondealquileres": {
-        "title": "EJECUCIÓN DE ALQUILERES",
-        "options": [
-            {
-            "¿Cuando es procedente?": "En el caso de que usted alquile un inmueble y su inquilino no cumple con el pago de los alquileres por más de dos periodos consecutivos, tiene derecho a tomar acciones ejecutivas para el cobro de los mismos. Lo mismo sucede con la falta de pago de expensas"
-            },
-            {
-            "¿Contra quién se acciona en este caso?": "La obligación de pago recae tanto en el inquilino y el garante permitiendo de esa forma ejecutar los bienes necesarios de aquel con el fin de cubrir las obligaciones incumplidas. Ambos son responsables por el destino que le dan al inmueble y la falta de cuidado del mismo."
-            }
-        ]
         }
+
     }
       
       

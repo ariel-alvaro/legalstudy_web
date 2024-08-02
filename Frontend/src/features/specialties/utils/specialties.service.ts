@@ -1,7 +1,8 @@
 
 import options from '../data/options.json'
 import sections from '../data/sections_faq.json' 
-import type { IOption, IQuestions } from '../interfaces/specialties.interface';
+import { FormErrorEnum } from '../enums/specialities.enum';
+import type { ICompensationRequest, IFormError, IOption, IQuestions } from '../interfaces/specialties.interface';
 
 
 
@@ -11,7 +12,7 @@ import type { IOption, IQuestions } from '../interfaces/specialties.interface';
   
 //export type sectionKey = keyof typeof options & keyof typeof sections
 
-export default class FAQ {
+export default class Specialties {
 
 
     //Return the section options
@@ -31,4 +32,55 @@ export default class FAQ {
         return questions
     }
 
+    public static check_form(data: any): [boolean, IFormError]{
+        let isValid: boolean = true
+
+        const errors: IFormError = {
+            dateError: '',
+            salaryError: '',
+        }
+        
+        const initial_date = new Date(data.initial_date)
+        const final_date =  new Date(data.final_date)
+        
+
+        if(data.initial_date === "" || data.final_date == ""){
+            errors.dateError = FormErrorEnum.EmptyDate
+            isValid = false
+        }
+
+        if (initial_date > final_date){
+            errors.dateError = FormErrorEnum.InconsistentDates
+            isValid = false
+        }
+
+        if (data.salary <= 0){
+            errors.salaryError = FormErrorEnum.NegativeSalary
+            isValid = false
+        }
+        
+    
+
+        return [isValid, errors]
+    }
+
+    public static process_data(data: any){
+
+        const requestData: ICompensationRequest = {
+            dates: {
+                initial_date: data.initial_date,
+                final_date: data.final_date
+            },
+            status: {
+                salary: parseInt(data.salary),
+                reason: data.reason,
+                noticed: data.noticed === 'true',
+                black: data.black === 'true'
+            }
+        }
+        console.log(requestData)
+        return requestData
+
+    }
 }
+

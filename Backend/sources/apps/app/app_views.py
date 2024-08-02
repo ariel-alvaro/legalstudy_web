@@ -120,7 +120,7 @@ class ChatDeleteAllAPIView(DestroyAPIView):
 
     def delete(self, request, *args, **kwargs):
         try:
-            chats = self.get_queryset().delete()
+            chats = self.get_queryset().filter(status=enums.ChatStatus.Closed).delete()
 
             return Response({}, status=status.HTTP_204_NO_CONTENT)
     

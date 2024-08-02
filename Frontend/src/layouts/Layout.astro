@@ -53,7 +53,9 @@ const { title } = Astro.props;
 			monospace;
 	}
 
-
+	.shadow1{
+		box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+	}
 
 	@layer components{
 
@@ -64,7 +66,7 @@ const { title } = Astro.props;
 			@apply w-screen h-screen 
 		}
 		.full-section{
-			@apply laptop:h-[45rem] bigmonitor:h-[62rem];
+			@apply laptop:h-[50rem] bigmonitor:h-[62rem];
 		}
 		.big-section{
 			@apply laptop:h-[45rem] bigmonitor:h-[62rem];

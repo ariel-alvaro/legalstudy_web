@@ -256,7 +256,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
             <section className={` ${open ? 'slide-up h-full': 'h-auto'} w-full z-50 fixed bottom-0 laptop:right-3 laptop:w-[27rem] laptop:h-auto `}>
 
                 {/* Head */}
-                <header className={` ${open ? "h-[10%]" : "h-10"} w-full bg-stone-900 flex items-center p-7 gap-4 laptop:h-18 `}>
+                <header className={` ${open ? "h-[10%]" : "h-10"} w-full bg-boxes flex items-center p-7 gap-4 laptop:h-18 `}>
                     <div className="w-10 h-10 rounded-full bg-red-50">
                         <img></img>
                     </div>
@@ -274,7 +274,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
                 {/* Body */}
                 
                 {open ?
-                <main className={`w-full laptop:h-[28rem] h-[85%] bg-zinc-800 p-4 overflow-scroll`} ref={mainRef}>
+                <main className={`w-full laptop:h-[28rem] h-[85%] bg-secondary p-4 overflow-scroll`} ref={mainRef}>
                     {/* <ComponentMap components={messages}/> */}
                     {messages.map((elem, index)=>(
                         <div key={index}>
@@ -284,14 +284,14 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
                 </main> : null}
 
                 {open ?
-                <footer className={`h-[5%] w-full bg-zinc-800 flex items-center laptop:h-9`}>
-                    <input type="text" className="w-[90%] h-full bg-zinc-800 text-white opacity-80 text-laptop border-2 border-zinc-900 px-2" ref={inputMessageRef} 
+                <footer className={`h-[5%] w-full bg-secondary flex items-center laptop:h-9`}>
+                    <input type="text" className="w-[90%] h-full bg-secondary text-white opacity-80 text-laptop border-2 border-zinc-900 px-2" ref={inputMessageRef} 
                     onKeyDown={(e)=>{ if (e.key === "Enter"){ handleInput() }
                     }}/>
 
-                    <div className="w-[10%] h-full bg-slate-600 flex justify-center items-center cursor-pointer" onClick={handleInput} >
+                    <div className="w-[10%] h-full bg-boxes flex justify-center items-center cursor-pointer" onClick={handleInput} >
                         
-                        <BiSend className=" text-stone-800 h-7 w-7"/>
+                        <BiSend className=" text-primary h-7 w-7"/>
                     </div>
 
     
@@ -312,8 +312,8 @@ function Message({origin, message}: IMessageProp){
     if(origin === MessageOriginEnum.Incoming){
         return(
             <> 
-                <div className="flex w-2/3 justify-start mb-6 text-white break-all">
-                    <p className="p-2 bg-zinc-900 rounded-md opacity-80 text-wrap laptop:text-sm">{message.text}</p>
+                <div className="flex w-2/3 justify-start mb-6 text-boxes break-all">
+                    <p className="p-2 bg-white rounded-md opacity-80 text-wrap laptop:text-sm">{message.text}</p>
                 </div>   
             </>
         )
@@ -323,8 +323,8 @@ function Message({origin, message}: IMessageProp){
         return(
             <>
                 <div className="w-full flex justify-end">
-                    <div className="flex w-2/3 justify-end mb-6 text-white break-all">
-                        <p className="p-2 bg-zinc-900 inline-block rounded-md opacity-80 laptop:text-sm">{message.text}</p>
+                    <div className="flex w-2/3 justify-end mb-6 text-boxes break-all">
+                        <p className="p-2 bg-white inline-block rounded-md opacity-80 laptop:text-sm">{message.text}</p>
                     </div>
                 </div>
             </>

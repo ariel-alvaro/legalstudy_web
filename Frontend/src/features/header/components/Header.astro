@@ -17,16 +17,16 @@ import Navbar from "./Navbar.astro";
     
     <div class="center-col w-full h-2/3 bigmonitor:gap-8 laptop:gap-3 z-20">
         <div class="relative">   
-            <BsHexagonFill className="w-16 h-16 laptop:w-20 laptop:h-20 text-secondary"/>
+            <BsHexagonFill className="w-16 h-16 laptop:w-20 laptop:h-20 text-boxes"/>
             <div class="w-full h-full absolute top-0 center">
                 <MdAccountBalance className="w-8 h-8 laptop:w-12 laptop:h-12"/>
             </div>
             
         </div>
         
-        <h2 class="text-3xl mb-10 text-text2 uppercase font-semibold">¿Por que elegirnos?</h2>
+        <h2 class="text-3xl mb-10 text-boxes uppercase font-semibold">¿Por que elegirnos?</h2>
 
-        <section class="w-full h-full center-col monitor:center-row-nomid bigmonitor:center gap-8 mb-10">
+        <section class="w-full h-full center-col monitor:center-row-nomid bigmonitor:center gap-12 mb-10">
 
             <div class='center-col relative card'>
                 <div class="absolute -top-5 laptop:-top-10 rounded-full bg-primary">
@@ -43,7 +43,7 @@ import Navbar from "./Navbar.astro";
             </div>
             <div class='center-col relative card'>
                 <div class="absolute -top-5 laptop:-top-10 rounded-full bg-primary">
-                    <img class="laptop:w-20 laptop:h-20 opacity-60" src="static/header/celeridad.svg"/>
+                    <img class="w-10 h-10 laptop:w-20 laptop:h-20 opacity-60" src="static/header/celeridad.svg"/>
                 </div>
                 <h3 class="text-lg laptop:text-xl uppercase opacity-80 font-semibold mt-7">celeridad</h3>
                 
@@ -70,12 +70,7 @@ import Navbar from "./Navbar.astro";
     </div>
     
 </section>
-<!-- 
-compromiso: Una vez que una causa ingresa al estudio nos comprometemos de lleno a intentar conseguir el resultado más favorable para el cliente.
-celeridad: Sabemos que los tiempos judiciales son absurdos, no obstante, nos empeñamos en hacer un seguimiento de cada caso con el fin de que avance lo más rápido posible, haciendole saber al cliente constantemente el estado de su causa.
-costos: Estamos al tanto que el acceso a la justicia no es económico, por eso brindamos consulta telefónica gratuita y en la mayoria de los casos honorarios a resultado, sin que tengas que hacer un desembolso para iniciar tu causa
 
--->
 <style>
 	@tailwind base;
 	@tailwind components;
@@ -83,7 +78,7 @@ costos: Estamos al tanto que el acceso a la justicia no es económico, por eso b
 
     @layer components{
         .card{
-            @apply w-[90%] h-40  monitor:w-[26rem] monitor:h-[11rem] bigmonitor:h-[13rem] bigmonitor:w-[35rem]  rounded-lg p-4 laptop:gap-2 bg-secondary text-text2
+            @apply w-[90%] h-40  monitor:w-[24rem] monitor:h-[11rem] bigmonitor:h-[12rem] bigmonitor:w-[30rem]  rounded-lg p-4 laptop:gap-2 bg-boxes text-text2
         }
 
         .card-text{

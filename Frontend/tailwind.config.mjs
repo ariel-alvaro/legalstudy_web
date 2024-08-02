@@ -11,15 +11,15 @@ export default {
 		backgroundImage:{
 			'header': "url('/static/header/header.jpg')",
 			'stats': "url('/static/other/statistics.jpg')",
-			'reviews': "url('/static/other/reviews.jpg')"
+			'building': "url('/static/other/building.png')"
 		},
 		extend: {
 			colors: {
-				'primary': '#f8f5f2',
-				'secondary': '#f45d48',
-				'boxes': '#078080',
-				'text1': '#222525',
-				'text2': '#232323',
+				'primary': 'hsl(207,15%,86%)',
+				'secondary': '#415a77',
+				'boxes': '#1b263b',
+				'text1': '#adb5bd',
+				'text2': '#adb5bd',
 				'gold-color': '#B79A5D'
 			}
 		},

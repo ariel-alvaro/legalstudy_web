@@ -1,3 +1,16 @@
+## [0.9] - 2025-8-2
+Frontend
+- Astro Migration
+- Stats, Reviews and footer components
+- Zustand 
+- Adjusting responsive design
+Backend
+- Change delete all chats to only the closed ones
+## [0.8] - 2025-7-20
+Frontend
+- New desing
+- New structure
+
 ## [0.7] - 2025-7-16
 Frontend
 - Reduced display info options to one component

@@ -36,8 +36,11 @@ function ChatPanel(){
 
 
 
-            <section className="laptop:full laptop:bg-red-700">
-                {chatSelected != undefined ? <Chat key={chatSelected.roomID} actual_user={UserTypeEnum.Admin} chat_data={chatSelected}/> : null }
+            <section className="laptop:full ">
+                {chatSelected != undefined ? <Chat key={chatSelected.roomID} actual_user={UserTypeEnum.Admin} chat_data={chatSelected}/> : 
+                <div className="full center">
+                    <h2 className="text-primary u">seleccione un chat</h2>    
+                </div>}
             </section>
 
             <Chats setChat={setChat}/>
@@ -120,17 +123,17 @@ function Chats({setChat}: {setChat: (chat:IChat) => void}){
 
 
 
-            <section className="full bg-black p-2">
+            <section className="full bg-boxes p-2">
 
                 <div className="center-col-nomid gap-3 full border-2 p-5">
 
-                    <h2 className="text-white font-bold uppercase text-2xl">Chats conectados</h2>
+                    <h2 className="text-secondary font-bold uppercase text-2xl">Chats conectados</h2>
 
-                    <div className="w-full h-full bg-slate-500">
+                    <div className="w-full h-full bg-boxes">
 
                         {
                             chatsOn.map((chat, index) => (
-                                <div className="bg-background border border-muted rounded-lg p-4 flex items-center justify-between">
+                                <div className="bg-secondary border border-muted rounded-lg p-4 flex items-center justify-between">
                                     <div className="space-y-1">
                                         <h3 className="text-lg font-semibold">{chat.client.name}</h3>
                                         <p className="text-muted-foreground">+54 {chat.client.cellphone}</p>
@@ -148,21 +151,27 @@ function Chats({setChat}: {setChat: (chat:IChat) => void}){
             </section>
 
 
-            <section className="full laptop:full bg-black p-2">
+            <section className="full laptop:full bg-boxes p-2">
 
                 <div className="center-col-nomid gap-3 h-[90%] laptop:full border-2 p-5">
 
-                    <h2 className="text-white font-bold uppercase text-2xl">Chats Guardados</h2>
+                    <h2 className="text-secondary font-bold uppercase text-2xl">Chats Guardados</h2>
+                    <button className="bg-red-700 text-primary rounded-md p-2" onClick={()=>{deleteChat(true)}}>Borrar todos</button>
 
-                    <div className="w-full h-full bg-slate-500">
+
+                    <div className="w-full h-full bg-boxes">
                     {
                         chatsOff.map((chat, index) => (
-                            <div className="bg-background border border-muted rounded-lg p-4 flex items-center justify-between">
+                            <div className="bg-secondary border border-muted rounded-lg p-4 flex items-center justify-between">
                                 <div className="space-y-1">
                                     <h3 className="text-lg font-semibold">{chat.client.name}</h3>
                                     <p className="text-muted-foreground">+54 {chat.client.cellphone}</p>
                                 </div>
-                                <button className="bg-white rounded-md p-2" onClick={()=>{setChat(chat)}}>Open</button>
+                                <div className="center gap-2">
+                                    <button className="bg-boxes text-primary rounded-md p-2" onClick={()=>{setChat(chat)}}>Abrir</button>
+                                    <button className="bg-red-700 text-primary rounded-md p-2" onClick={()=>{deleteChat(false, chat.roomID)}}>Borrar</button>
+                                </div>
+
                             </div>
                         ))
                     }

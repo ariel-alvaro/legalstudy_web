@@ -13,7 +13,7 @@ import Footer from '@components/footer/components/Footer.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
+	<main class="overflow-hidden">
 		<Header/>
 		<Stats/>
 		<Specialties/>
@@ -21,7 +21,7 @@ import Footer from '@components/footer/components/Footer.astro';
 		<Inmobiliario/>
 		<Reviews/>
 		<Footer/>
-		<!-- <Chat actual_user={UserTypeEnum.AnonymousUser} client:load/> -->
+		<Chat actual_user={UserTypeEnum.AnonymousUser} client:load/>
 	</main>
 </Layout>
 
