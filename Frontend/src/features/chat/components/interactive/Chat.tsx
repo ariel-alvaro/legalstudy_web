@@ -9,15 +9,15 @@ import { HttpRequest } from "@core/utils/http";
 import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
 import { HTTPMethodEnum } from "@core/enums/core.enum";
 import { FaUserCircle } from "react-icons/fa";
+import Utils from "@core/utils/utils";
 
 
 export default function Chat({actual_user, chat_data}: {actual_user:string, chat_data?: IChatData}  ){
 
 
-
     const mainRef = useRef<HTMLElement>(null)
     const inputMessageRef = useRef<HTMLInputElement>(null)
-    
+
     const [open, setOpen] = useState<boolean>(false)
     const [hasDisconnect, setHasDisconnected] = useState(false)
     const [messages, setmessages] = useState<(JSX.Element | null)[]>([]);
@@ -61,9 +61,9 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
     //Functions
     const initializeWebSocket = (uuid: string) => {
         
-        const ws_url = `ws://localhost:8088/ws/chat/${uuid}/`;
+        const wsuuid_url = Utils.set_url(import.meta.env.PUBLIC_WS_ENDPOINT,["chat",uuid])
         wsHandler.setMessageHandler(handleMessage);
-        wsHandler.connect(ws_url);
+        wsHandler.connect(wsuuid_url);
 
         setChatOpen(true)
     }    
@@ -71,7 +71,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
 
     const  createChat = async () => {
         
-        const create_url: string = "http://localhost:8000/api/v1/chat_create"
+        const create_url: string = Utils.set_url(import.meta.env.PUBLIC_API_ENDPOINT,["chat_create"]);
         const options: IHttpOptions = HttpRequest.generateOptions(create_url, {}) 
 
         const response: IHTTPresponse<IChat> = await HttpRequest.request<IChat>(HTTPMethodEnum.POST, options)
@@ -102,7 +102,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
     }
     
     const getMessages = async () => {
-        const get_url =  `http://localhost:8000/api/v1/chat_retrieve/${chat_data?.roomID}`
+        const get_url = Utils.set_url(import.meta.env.PUBLIC_API_ENDPOINT,["chat_retrieve",chat_data?.roomID ?? ""]); 
 
         const options: IHttpOptions = HttpRequest.generateOptions(get_url, {})
 

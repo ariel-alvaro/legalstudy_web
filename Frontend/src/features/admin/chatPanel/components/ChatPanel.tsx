@@ -8,6 +8,7 @@ import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interfac
 import { HttpRequest } from "@core/utils/http";
 import { HTTPCodeEnum, HTTPMethodEnum } from "@core/enums/core.enum";
 import WithAuth from "@components/admin/withAuth/components/WithAuth";
+import Utils from "@core/utils/utils";
 
 function ChatPanel(){
 
@@ -67,7 +68,7 @@ function Chats({setChat}: {setChat: (chat:IChat) => void}){
 
 
     const connectAdmin = () => {
-        const ws_url = "ws://localhost:8088/ws/admin/";
+        const ws_url = Utils.set_url(import.meta.env.PUBLIC_WS_ENDPOINT,["admin"]);
         wsHandler.connect(ws_url);
         wsHandler.setMessageHandler(messageHandler);
     }
@@ -78,7 +79,7 @@ function Chats({setChat}: {setChat: (chat:IChat) => void}){
 
     const  deleteChat = async (all: boolean = false, roomID:string = '') => {
         
-        const url = all ? "http://localhost:8088/api/v1/chat_delete_all" : `http://localhost:8088/api/v1/chat_delete/${roomID}`
+        const url = all ? Utils.set_url(import.meta.env.PUBLIC_API_ENDPOINT,["chat_delete_all"]) : Utils.set_url(import.meta.env.PUBLIC_API_ENDPOINT,["chat_delete", roomID])
 
         const options: IHttpOptions = HttpRequest.generateOptions(url, {}) 
 
@@ -91,8 +92,8 @@ function Chats({setChat}: {setChat: (chat:IChat) => void}){
     }
 
     const getChats = async () => {
-        
-        const options: IHttpOptions = HttpRequest.generateOptions("http://localhost:8088/api/v1/chat_list", {})
+        const url = Utils.set_url(import.meta.env.PUBLIC_API_ENDPOINT,["chat_list"]) 
+        const options: IHttpOptions = HttpRequest.generateOptions(url, {})
 
         const response: IHTTPresponse<IChat[]> = await HttpRequest.request<IChat[]>(HTTPMethodEnum.GET,options, true) 
 

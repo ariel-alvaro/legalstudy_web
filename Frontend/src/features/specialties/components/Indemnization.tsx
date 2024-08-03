@@ -4,6 +4,7 @@ import Specialties from "../utils/specialties.service";
 import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
 import { HttpRequest } from "@core/utils/http";
 import { HTTPMethodEnum } from "@core/enums/core.enum";
+import Utils from "@core/utils/utils";
 
 
 
@@ -37,7 +38,7 @@ export function CompensationForm({handleResults}: {handleResults: (results: ICom
 
 
     //TODO: Cambiar esto a algo mas centralizado y accesible en vez de llamar siempre a setUrl
-    const url = "http://localhost:8088/api/v1/calculo"
+    const url = Utils.set_url(import.meta.env.PUBLIC_API_ENDPOINT,["calculo"])
     const [formErrors, setFormErrors] = useState<IFormError>({dateError:'',salaryError:''})
 
     const requestCalculo = async (data: any) => {

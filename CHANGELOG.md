@@ -1,3 +1,11 @@
+## [1.0] - 2025-8-3
+Frontend
+- Enviroment Configuration
+- Recursive URL setter
+Backend
+- removed final / in ws routers
+- Enviroment Configuration
+
 ## [0.9] - 2025-8-2
 Frontend
 - Astro Migration

@@ -1,14 +1,15 @@
 import { HTTPCodeEnum, HTTPMethodEnum } from "@core/enums/core.enum";
 import type { IHTTPdetail, IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
 import { HttpRequest } from "@core/utils/http";
+import Utils from "@core/utils/utils";
 import { useEffect, useState } from "react"
 
 
 export default function WithAuth(Component: any){
 
     return function Auth(){
-
-        const url = "http://localhost:8000/api/v1/auth/verify/";
+        
+        const url = Utils.set_url(import.meta.env.PUBLIC_API_ENDPOINT,["auth","verify"])
 
         const [authenticated, setAuthenticated] = useState<boolean>(false);
 

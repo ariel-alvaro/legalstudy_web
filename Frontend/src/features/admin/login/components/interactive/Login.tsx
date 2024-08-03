@@ -8,13 +8,13 @@ import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interfac
 import { HttpRequest } from "@core/utils/http"
 import { HTTPMethodEnum } from "@core/enums/core.enum"
 import { useNavigate } from "react-router-dom"
+import Utils from "@core/utils/utils"
 
 export default function Login() {
 
     
 
-    const url = "http://localhost:8088/api/v1/auth/login/"
-
+    const url = Utils.set_url(import.meta.env.PUBLIC_API_ENDPOINT,["auth","login"])
 
 
     const requestLogin = async (data: any) => {
