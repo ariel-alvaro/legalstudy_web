@@ -1,15 +1,26 @@
-'use client'
-import React, {useContext, useEffect, useRef, useState } from "react"
-import {IoIosArrowDown, IoIosArrowUp} from 'react-icons/io'
+// React 
+import React, { useEffect, useRef, useState } from "react";
+
+// Components
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { BiSend } from "react-icons/bi";
+import { FaUserCircle } from "react-icons/fa";
+
+// Interface 
 import type { IChat, IChatData, IMessage, IMessageData, IMessageProp } from "@components/chat/interfaces/chat.interface";
+import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
+
+// Enum 
 import { ChatStatusEnum, MessageOriginEnum, MessageTypeEnum, UserTypeEnum, WebsocketTypeEnum } from "@components/chat/enums/chat.enum";
+import { HTTPMethodEnum } from "@core/enums/core.enum";
+
+// Utility 
 import { WebSocketHandler } from "@core/utils/websocket";
 import { HttpRequest } from "@core/utils/http";
-import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
-import { HTTPMethodEnum } from "@core/enums/core.enum";
-import { FaUserCircle } from "react-icons/fa";
 import Utils from "@core/utils/utils";
+
+// Style 
+import "../styles/chat.css";
 
 
 export default function Chat({actual_user, chat_data}: {actual_user:string, chat_data?: IChatData}  ){
@@ -33,7 +44,6 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
     },[messages, open])
 
     useEffect(() => {
-        console.log("helloooo")
         // Set open depending on screen width
         if (innerWidth >= 1024 || actual_user == UserTypeEnum.Admin){
             setOpen(true)
@@ -87,7 +97,6 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
     }
 
     const handleMessage = (message: IMessage) => {
-        console.log(message)
         if(message.data.user_type != actual_user){
 
             if (message.data.message_type == MessageTypeEnum.Notification){
@@ -142,8 +151,8 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
    
         
         let messageElem: JSX.Element | null = null
-        //console.log("####",messageOrigin, data)
-        // Genere only if it's not my user
+
+        // Generate only if it's not my user
         if(message.message_type === MessageTypeEnum.Chat){
             messageElem = <Message origin={messageOrigin} message={message}/>
         }
@@ -189,7 +198,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
     //&& chatOpen
     if(actual_user === UserTypeEnum.Admin && chatOpen){
         return(
-            <section className={` ${open ? 'slide-up h-full': 'h-auto'} w-full z-50 fixed bottom-0 laptop:static `}>
+            <section className={` ${open ? 'h-full': 'h-auto'} w-full z-50 fixed bottom-0 laptop:static `}>
 
             {/* Head */}
             <header className={` ${open && innerWidth < 1024 ? "h-[10%]" : "h-10"} w-full bg-slate-500 flex items-center p-7 gap-4 laptop:h-[10%] `}>
@@ -257,8 +266,8 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
 
                 {/* Head */}
                 <header className={` ${open ? "h-[10%]" : "h-10"} w-full bg-boxes flex items-center p-7 gap-4 laptop:h-18 `}>
-                    <div className="w-10 h-10 rounded-full bg-red-50">
-                        <img></img>
+                    <div className="w-10 h-10 rounded-full">
+                        <img src="/static/iconos/logoBG.png" className=" rounded-full"></img>
                     </div>
                     <h3 className="text-white text-xl">Abogado en linea</h3>
                     <span className="h-3 w-3 rounded-full bg-green-500 opacity-75"></span>
@@ -312,7 +321,7 @@ function Message({origin, message}: IMessageProp){
     if(origin === MessageOriginEnum.Incoming){
         return(
             <> 
-                <div className="flex w-2/3 justify-start mb-6 text-boxes break-all">
+                <div className="flex w-2/3 justify-start mb-6 text-boxes break-words relative">
                     <p className="p-2 bg-white rounded-md opacity-80 text-wrap laptop:text-sm">{message.text}</p>
                 </div>   
             </>
@@ -323,7 +332,7 @@ function Message({origin, message}: IMessageProp){
         return(
             <>
                 <div className="w-full flex justify-end">
-                    <div className="flex w-2/3 justify-end mb-6 text-boxes break-all">
+                    <div className="flex w-2/3 justify-end mb-6 text-boxes break-words">
                         <p className="p-2 bg-white inline-block rounded-md opacity-80 laptop:text-sm">{message.text}</p>
                     </div>
                 </div>

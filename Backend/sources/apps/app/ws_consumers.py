@@ -51,7 +51,6 @@ class TokenAuthMiddleware:
         return await self.app(scope, receive, send)
 
 def generate_message(ws_type: str, message_type: int, user_type: str, text: str):
-    print(ws_type, message_type, user_type, text)
     return json.dumps({"type": ws_type, "data":{"user_type": user_type, "message_type":message_type ,"text": text}}, ensure_ascii=False)
 
 def generate_notification(ws_type:str , notification_type: int):

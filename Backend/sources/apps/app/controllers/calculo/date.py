@@ -75,7 +75,6 @@ class Date():
     results = {}
 
     def __init__(self, initialDate:str , finalDate:str, strategies: list[DateCalculoStrategy]) -> None:
-        print(initialDate, finalDate, "<--------")
         self.initialDate = convertToDate(initialDate)
         self.finalDate = convertToDate(finalDate)
         self._strategies = strategies

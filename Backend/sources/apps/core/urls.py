@@ -7,8 +7,6 @@ router = routers.DefaultRouter()
 
 router.register("auth", AuthViewSet, basename='auth')
 
-router.registry.extend(app_urls.router.registry) # App app
-
 urlpatterns = [
     path('', include('apps.app.app_urls'))
 ]

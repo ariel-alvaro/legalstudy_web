@@ -15,12 +15,6 @@ export default function Options(){
     const [isFired, setIsFired] = useState<boolean>(false);
     const [isCalculo, setIsCalculo]= useState<boolean>(false);
 
-
-    useEffect(()=>{
-        console.log(questions)
-    },[questions])
-
-
     const reset = () => {
         setQuestions(null);
         setSelectedQuestion("");
@@ -42,11 +36,10 @@ export default function Options(){
         }
 
         setQuestions(Specialties.list_faq(section, alias));
-        console.log(questions)
     }
 
     const handleQuestion = (question: string) => {
-        console.log(question, selectedQuestion)
+
         if(question == selectedQuestion){
             setSelectedQuestion("");
             return
@@ -131,7 +124,6 @@ export default function Options(){
     )
 }
 function ConvertJumpText({text}: {text: string}) {
-    console.log(text.split(/\r?\n|\r|\n/g))
     return (
       <div>
         {text.split('\n').map((linea, index) => (

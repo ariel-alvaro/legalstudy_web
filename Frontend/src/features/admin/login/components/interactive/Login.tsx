@@ -1,20 +1,25 @@
 'use client'
 
-import { type FormEvent, useContext, useEffect } from "react"
+// React
+import { type FormEvent } from "react";
 
+// Interfaces
+import type { IRequestUser } from "@components/admin/login/interfaces/login.interface";
+import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
 
-import type { IRequestUser } from "@components/admin/login/interfaces/login.interface"
-import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface"
-import { HttpRequest } from "@core/utils/http"
-import { HTTPMethodEnum } from "@core/enums/core.enum"
-import { useNavigate } from "react-router-dom"
-import Utils from "@core/utils/utils"
+// Enums
+import { HTTPMethodEnum } from "@core/enums/core.enum";
+
+// Utility
+import { HttpRequest } from "@core/utils/http";
+import Utils from "@core/utils/utils";
+
 
 export default function Login() {
 
     
 
-    const url = Utils.set_url(import.meta.env.PUBLIC_API_ENDPOINT,["auth","login"])
+    const url = Utils.set_url(import.meta.env.PUBLIC_API_ENDPOINT,["auth","login/"])
 
 
     const requestLogin = async (data: any) => {

@@ -4,6 +4,8 @@ import { IoCall } from "react-icons/io5";
 import { GoClockFill } from "react-icons/go";
 import { IoIosMail } from "react-icons/io";
 import { FaFacebookSquare, FaWhatsappSquare, FaInstagramSquare } from "react-icons/fa";
+import UrlWrapper from "shared/components/UrlWrapper.astro";
+import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL } from "shared/constants";
 ---
 
 <footer id="footer" class="laptop:medium-section center-col laptop:center gap-10 monitor:gap-20 mt-10">
@@ -25,26 +27,26 @@ import { FaFacebookSquare, FaWhatsappSquare, FaInstagramSquare } from "react-ico
                     <GoClockFill className="w-5 h-5 text-gold-color"/> 
                 </div>
                 
-                <p>Lun - Vie: 08:00 - 17:00</p>
+                <p>Lun - Vie: 09:00 - 18:00</p>
             </div>
             <div class="center justify-start gap-2">
                 <div class="bg-yellow-800 p-2 rounded-lg">
                     <FaLocationDot className="w-5 h-5 text-gold-color"/> 
                 </div>
-                <p>Arturo M. Bas 73</p>
+                <p>Figueroa Alcorta 320</p>
                 
             </div>
             <div class="center justify-start gap-2">
                 <div class="bg-yellow-800 p-2 rounded-lg">
                     <IoCall className="w-5 h-5 text-gold-color"/> 
                 </div>
-                <p>3512297044</p>
+                <p>3513902673</p>
             </div>
             <div class="center justify-start gap-2">
                 <div class="bg-yellow-800 p-2 rounded-lg">
                     <IoIosMail className="w-5 h-5 text-gold-color"/> 
                 </div>
-                <p>racknorkmdsad@gmail.com</p>
+                <p>estudiojuridicoad@hotmail.com</p>
             </div>
 
         </article>
@@ -54,9 +56,17 @@ import { FaFacebookSquare, FaWhatsappSquare, FaInstagramSquare } from "react-ico
         <h3 class="text-2xl font-thin mt-10">Enlaces</h3>
         <div class="w-10 h-0.5 bg-yellow-800"></div>
         <div class="center gap-10">
-            <FaWhatsappSquare className="w-10 h-10 text-gold-color"/>
-            <FaFacebookSquare className="w-10 h-10 text-gold-color"/>
-            <FaInstagramSquare className="w-10 h-10 text-gold-color"/>
+            <UrlWrapper url={WHATSAPP_URL}>
+                <FaWhatsappSquare className="w-10 h-10 text-gold-color"/>
+            </UrlWrapper>
+
+            <UrlWrapper url={FACEBOOK_URL}>
+                <FaFacebookSquare className="w-10 h-10 text-gold-color"/>
+            </UrlWrapper>
+
+            <UrlWrapper url={INSTAGRAM_URL}>
+                <FaInstagramSquare className="w-10 h-10 text-gold-color"/>
+            </UrlWrapper>
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1702.579533237954!2d-64.19113304939945!3d-31.40974325536341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432987ec755ccbf%3A0xadb66fc5ef2bd8b9!2sAv.%20Figueroa%20Alcorta%20320%2C%20X5000%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1722406065584!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-4/5 laptop:w-full h-96 laptop:h-1/2"></iframe>
 

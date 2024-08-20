@@ -22,15 +22,10 @@ class Calculo(RetrieveAPIView):
     permission_classes = [AllowAny]
     def post(self, request):
         try:
-            print(request.data)
-
             data = processCalculo(request.data)
-            
             return Response(data)   
-        
         except Exception as exception:
-            #Do logger class for this
-            pass
+            return Response({"detail":"An error has occurred"}, status=status.HTTP_400_BAD_REQUEST)
 
 ## Register views
 class RegisterRetrieveTotalAPIView(RetrieveAPIView):
@@ -39,9 +34,7 @@ class RegisterRetrieveTotalAPIView(RetrieveAPIView):
     def get(self, request):
         try:
             total_visits = models.Register.objects.all().aggregate(total=Sum("visited"))["total"]
-
             return Response({"total":total_visits}, status=status.HTTP_200_OK)
-        
         except Exception as e:
             return Response({"detail":"An error has occurred"}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -53,7 +46,6 @@ class RegisterRetrieveAPIView(RetrieveAPIView):
     serializer_class = app_serializers.RegisterRetrieveSerializer
 
     def get_object(self):
-        
         queryset = self.get_queryset()
         obj = get_object_or_404(queryset, date=datetime.now().strftime("%Y-%m-%d"))
         return obj
@@ -68,11 +60,11 @@ class RegisterCreateAPIView(CreateAPIView):
     def create(self, request, *args, **kwargs):
         try:
             date = datetime.now().strftime("%Y-%m-%d")
-            # print(date, flush=True)
+  
             register = models.Register.objects.filter(date = date).first()
             
             if (register):
-                print("existe",flush=True)
+
                 visited = register.visited + 1
                 data = {"visited":visited}
                 serializer = self.get_serializer(register, data = data, partial=True)

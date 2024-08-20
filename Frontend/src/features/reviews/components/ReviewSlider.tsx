@@ -44,7 +44,6 @@ export default function ReviewSlider(){
         }
 
         if(reset == true){
-            console.log("washa")
             reviewsRef.current?.scrollBy({ left:-REVIEW_BOX_WIDTH * reviews.length, behavior: "smooth" });
             return
         }

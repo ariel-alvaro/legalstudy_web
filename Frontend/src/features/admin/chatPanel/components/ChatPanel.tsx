@@ -1,14 +1,23 @@
+// React
 import { useEffect, useState } from "react";
 
-import {WebSocketHandler} from "@core/utils/websocket"
-import Chat from "@components/chat/components/interactive/Chat";
-import { ChatStatusEnum, UserTypeEnum } from "@components/chat/enums/chat.enum";
+// Components
+import Chat from "@components/chat/components/Chat";
+import WithAuth from "@components/admin/withAuth/components/WithAuth";
+
+// Interfaces
 import type { IChat, IChatData } from "@components/chat/interfaces/chat.interface";
 import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
-import { HttpRequest } from "@core/utils/http";
+
+// Enums
+import { ChatStatusEnum, UserTypeEnum } from "@components/chat/enums/chat.enum";
 import { HTTPCodeEnum, HTTPMethodEnum } from "@core/enums/core.enum";
-import WithAuth from "@components/admin/withAuth/components/WithAuth";
+
+// Utility
+import { WebSocketHandler } from "@core/utils/websocket";
+import { HttpRequest } from "@core/utils/http";
 import Utils from "@core/utils/utils";
+
 
 function ChatPanel(){
 
@@ -16,7 +25,7 @@ function ChatPanel(){
 
     const setChat = (chat: IChat) => {
         setChatSelected(undefined);
-        console.log("entre")
+
         let chat_data: IChatData = {
             roomID: chat.roomID,
             status: chat.status,
@@ -113,7 +122,6 @@ function Chats({setChat}: {setChat: (chat:IChat) => void}){
         let chats_on: IChat[] = chats.filter((chat) => chat.status === ChatStatusEnum.Open)
         let chats_off: IChat[] =  chats.filter((chat) => chat.status === ChatStatusEnum.Closed)
 
-        console.log(chats_off, chats_on)
         setChatsOn(chats_on)
         setChatsOff(chats_off)
 

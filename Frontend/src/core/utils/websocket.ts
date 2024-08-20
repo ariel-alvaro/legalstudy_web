@@ -13,14 +13,11 @@ export class WebSocketHandler{
     }
 
     connect(url: string){
-        console.log(url);
         this.websocket = new WebSocket(url)
-
         this.websocket.onopen = this.socketOnOpen
         this.websocket.onmessage = this.socketOnMessage
         this.websocket.onerror = this.socketOnError
         this.websocket.onclose = this.socketOnClose
-
     }
     
     closeSocket = (type: number) => {
@@ -36,21 +33,15 @@ export class WebSocketHandler{
     }
     
     socketOnOpen = (response: Event) => {
-        // Make context state to the root and make the chat appear in case of success
-        console.log(response)
+
     }
 
     socketOnMessage = (response: MessageEvent) => {
-     
         let message: IMessage = JSON.parse(response.data) 
         
-        console.log(message)
         if(this.messageHandler){
             this.messageHandler(message)
         }
-        
-
-        // this.messageHandler!(data.message)
     }
 
     socketOnClose = (response: CloseEvent) => {

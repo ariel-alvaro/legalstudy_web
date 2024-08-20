@@ -15,7 +15,6 @@ export function Indemnization(){
     
 
     useEffect(()=> {
-        console.log("asaaa",results)
         if ( results != null ){
             setCalculated(!calculated)
         }
@@ -193,11 +192,11 @@ function CompensationResults({results}: {results: ICompensationResponse | null})
                     <h3 className="text-white opacity-80">${results?.noticedSust}</h3>
                 </li>      
                 <li className='w-full laptop:w-1/2 p-1 center-col text-left text-base rounded-lg shadow-sm shadow-white bg-secondary justify-between'>
-                    <h3 className="w-full text-center lg:text-left text-white opacity-80">Antigüedad Art. 245</h3>
+                    <h3 className="w-full text-center lg:text-left text-white opacity-80">SAC Preaviso</h3>
                     <h3 className="text-white opacity-80">${results?.noticedSac}</h3>
                 </li>      
                 <li className='w-full laptop:w-1/2 p-1 center-col text-left text-base rounded-lg shadow-sm shadow-white bg-secondary justify-between'>
-                    <h3 className="w-full text-center lg:text-left text-white opacity-80">SAC Preaviso</h3>
+                    <h3 className="w-full text-center lg:text-left text-white opacity-80">Días trabajados del Mes</h3>
                     <h3 className="text-white opacity-80">${results?.dayMonth}</h3>
                 </li>      
                 <li className='w-full laptop:w-1/2 p-1 center-col text-left text-base rounded-lg shadow-sm shadow-white bg-secondary justify-between'>

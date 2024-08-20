@@ -46,18 +46,13 @@ class DayMonth(CalculoStrategy):
     name = "dayMonth"
     
     def calculate(self, status, dateInfo, results ) -> int:
-        print("ACA ->>",dateInfo["finalDay"], ( status['salary'] / 31 ) * dateInfo["finalDay"] )
-        
         return ( status['salary'] / 30 ) * dateInfo["finalDay"]
 
 class MonthIntegration(CalculoStrategy):
     name = "monthIntegration"
 
     def calculate(self, status, dateInfo, results ) -> int:
-        if ( dateInfo['monthLastDays'] > 0):
-            return ( status['salary'] / 30 ) * dateInfo['monthLastDays']
-        
-        return 0
+        return status['salary'] - results['dayMonth']
 
 
 class NoticedSac(CalculoStrategy):
@@ -76,7 +71,6 @@ class ProportionalSac(CalculoStrategy):
     name = "proportionalSac"
 
     def calculate(self, status, dateInfo, results ) -> int:
-        print(dateInfo['semesterWorkedDays'], " <-------")
         return ( (status['salary'] / 2) / 182.5 ) * dateInfo['semesterWorkedDays']
         
 class Holiday(CalculoStrategy):

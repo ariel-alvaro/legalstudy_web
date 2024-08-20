@@ -28,7 +28,6 @@ export default class Specialties {
             title: (sections as any)[section][alias].title,
             options: (sections as any)[section][alias].options
         }
-        console.log(Object.keys(questions.options[0]) )
         return questions
     }
 
@@ -78,7 +77,7 @@ export default class Specialties {
                 black: data.black === 'true'
             }
         }
-        console.log(requestData)
+        
         return requestData
 
     }
