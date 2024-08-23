@@ -1,3 +1,4 @@
+//JSON
 import reviews from "../data/reviews.json"
 
 export class Reviews {

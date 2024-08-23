@@ -1,7 +1,16 @@
+// React
 import { useEffect, useRef, useState } from "react";
+
+// Components
 import ReviewBox from "./ReviewBox";
-import { IoIosArrowBack, IoIosArrowForward  } from "react-icons/io";
-import {type IReview } from "../interfaces/reviews.interface";
+
+// React Icons
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
+// Interfaces
+import type { IReview } from "../interfaces/reviews.interface";
+
+// Utilities
 import { Reviews } from "../utils/reviews";
 
 export default function ReviewSlider(){

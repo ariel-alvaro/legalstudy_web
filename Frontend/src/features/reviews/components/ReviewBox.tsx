@@ -1,8 +1,10 @@
-import { useRef } from "react";
+// React Icons
 import { IoIosStar } from "react-icons/io";
+import { FcGoogle } from "react-icons/fc";
+
+// Interfaces
 import type { IReview } from "../interfaces/reviews.interface";
 
-import { FcGoogle } from "react-icons/fc";
 
 export default function ReviewBox({review}: {review: IReview}){
 

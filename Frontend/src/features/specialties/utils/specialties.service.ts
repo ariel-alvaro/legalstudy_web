@@ -1,7 +1,11 @@
+// JSON
+import options from '../data/options.json';
+import sections from '../data/sections_faq.json';
 
-import options from '../data/options.json'
-import sections from '../data/sections_faq.json' 
+// Enums
 import { FormErrorEnum } from '../enums/specialities.enum';
+
+// Interfaces
 import type { ICompensationRequest, IFormError, IOption, IQuestions } from '../interfaces/specialties.interface';
 
 

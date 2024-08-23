@@ -1,10 +1,18 @@
+// React
 import { type FormEvent, useContext, useEffect, useState } from "react";
+
+// Interfaces
 import type { ICompensationResponse, IFormError } from "../interfaces/specialties.interface";
-import Specialties from "../utils/specialties.service";
 import type { IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
-import { HttpRequest } from "@core/utils/http";
+
+// Enums
 import { HTTPMethodEnum } from "@core/enums/core.enum";
+
+// Utilities
+import Specialties from "../utils/specialties.service";
+import { HttpRequest } from "@core/utils/http";
 import Utils from "@core/utils/utils";
+
 
 
 

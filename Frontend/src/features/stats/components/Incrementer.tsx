@@ -1,5 +1,4 @@
-
-import {useEffect, useState } from "react";
+// Utilities
 import { useSpring, animated } from "react-spring";
 
 

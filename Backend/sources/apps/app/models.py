@@ -13,7 +13,7 @@ from django.conf import settings
 class Chat(BaseModel):
     #Fields
     roomID = models.UUIDField(primary_key=True, unique=True, editable=False, default=uuid4)
-    status = models.CharField(max_length=5, default=ChatStatus.Request)
+    status = models.CharField(max_length=10, default=ChatStatus.Request)
     #Relationships
     #Metadata
     #Methods

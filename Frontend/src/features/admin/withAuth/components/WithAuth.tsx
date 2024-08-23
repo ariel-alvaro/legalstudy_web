@@ -1,8 +1,16 @@
+// React
+import { useEffect, useState } from "react";
+
+// Enums
 import { HTTPCodeEnum, HTTPMethodEnum } from "@core/enums/core.enum";
+
+// Interfaces
 import type { IHTTPdetail, IHttpOptions, IHTTPresponse } from "@core/interfaces/core.interface";
+
+// Utility
 import { HttpRequest } from "@core/utils/http";
 import Utils from "@core/utils/utils";
-import { useEffect, useState } from "react"
+
 
 
 export default function WithAuth(Component: any){

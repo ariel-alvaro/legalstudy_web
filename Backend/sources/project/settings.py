@@ -95,7 +95,7 @@ DATABASES = {
         'NAME': BD_NAME,
         'USER': config('BD_USER', default=None), # Not used with sqlite3.
         'PASSWORD': config('BD_PASSWORD', default=None), # Not used with sqlite3.
-        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': 'mysql', # Set to empty string for localhost. Not used with sqlite3.
         'PORT': config('BD_PORT', default=''), # Set to empty string for default. Not used with sqlite3.
     }
 }

@@ -14,7 +14,7 @@ services:
       - ./Frontend:/home/web
 
     networks:
-      - dev-network
+      - estudio-network
 
   backend:
 
@@ -29,7 +29,7 @@ services:
       - ./Backend/sources:/home/web/sources
 
     networks:
-      - dev-network
+      - estudio-network
 
   redis:
     image: redis:latest
@@ -37,7 +37,7 @@ services:
     ports:
       - "6379:6379"
     networks:
-      - dev-network
+      - estudio-network
 
   mysql:
     image: mysql:latest
@@ -46,20 +46,20 @@ services:
       - "3306:3306"
 
     environment:
-      MYSQL_ROOT_PASSWORD: dev
+      MYSQL_ROOT_PASSWORD: ...
       MYSQL_DATABASE: db_estudioad
       MYSQL_USER: estudioad
-      MYSQL_PASSWORD: dev
+      MYSQL_PASSWORD: ...
 
     volumes:
       - mysqldata:/var/lib/mysql
       - ./Config/init-db:/docker-entrypoint-initdb.d
     
     networks:
-      - dev-network
+      - estudio-network
 
 networks:
-  dev-network:
+  estudio-network:
     driver: bridge
 
 volumes:

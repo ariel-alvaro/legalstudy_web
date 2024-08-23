@@ -294,7 +294,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
 
                 {open ?
                 <footer className={`h-[5%] w-full bg-secondary flex items-center laptop:h-9`}>
-                    <input type="text" className="w-[90%] h-full bg-secondary text-white opacity-80 text-laptop border-2 border-zinc-900 px-2" ref={inputMessageRef} 
+                    <input type="text" maxLength={300} className="w-[90%] h-full bg-secondary text-white opacity-80 text-laptop border-2 border-zinc-900 px-2" ref={inputMessageRef} 
                     onKeyDown={(e)=>{ if (e.key === "Enter"){ handleInput() }
                     }}/>
 
@@ -321,9 +321,11 @@ function Message({origin, message}: IMessageProp){
     if(origin === MessageOriginEnum.Incoming){
         return(
             <> 
-                <div className="flex w-2/3 justify-start mb-6 text-boxes break-words relative">
-                    <p className="p-2 bg-white rounded-md opacity-80 text-wrap laptop:text-sm">{message.text}</p>
-                </div>   
+                <div className="flex w-2/3 justify-start mb-6 text-boxes relative">
+                    <p className="p-2 bg-white rounded-md opacity-80 whitespace-normal break-words overflow-wrap-normal laptop:text-sm max-w-full">
+                        {message.text}
+                    </p>
+                </div>
             </>
         )
     }
@@ -332,8 +334,10 @@ function Message({origin, message}: IMessageProp){
         return(
             <>
                 <div className="w-full flex justify-end">
-                    <div className="flex w-2/3 justify-end mb-6 text-boxes break-words">
-                        <p className="p-2 bg-white inline-block rounded-md opacity-80 laptop:text-sm">{message.text}</p>
+                    <div className="flex w-2/3 justify-end mb-6 text-boxes">
+                        <p className="p-2 bg-white rounded-md opacity-80 whitespace-normal break-words overflow-wrap-normal laptop:text-sm max-w-full">
+                        {message.text}
+                        </p>
                     </div>
                 </div>
             </>
