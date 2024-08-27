@@ -1,7 +1,8 @@
 export enum SectionEnum{
     Laboral = "Laboral",
     Civil = "Civil",
-    Familiar = "Familiar"
+    Familiar = "Familiar",
+    Penal = "Penal"
 }
 
 export enum InformationTypeEnum{

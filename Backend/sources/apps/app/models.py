@@ -43,7 +43,7 @@ class Chat(BaseModel):
 
 class Message(BaseModel):
     #Fields
-    user_type = models.CharField(max_length=6)
+    user_type = models.CharField(max_length=22)
     text = models.CharField(max_length=500)
     #Relationships
     chat = models.ForeignKey(Chat, on_delete=models.CASCADE, related_name="messages")
@@ -54,7 +54,7 @@ class Message(BaseModel):
 class Client(models.Model):
     #Fields
     name = models.CharField(max_length=32, blank=True)
-    cellphone = models.PositiveIntegerField(blank=True)
+    cellphone = models.CharField(max_length=20, blank=True)
     #Relationships
     chat = models.OneToOneField(Chat, on_delete=models.CASCADE, related_name='client')
     #Metadata

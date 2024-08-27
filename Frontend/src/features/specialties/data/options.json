@@ -15,6 +15,9 @@
         {"title": "divorcio express", "alias": "divorcioexpress", "imageName": "familia/fam0.png"},
         {"title": "cuota alimentaria", "alias": "cuotaalimentaria", "imageName": "familia/fam1.png"},
         {"title": "filiacion", "alias": "filiacion", "imageName": "familia/fam2.png"}
+    ],
+    "Penal": [
+        {"title": "violencia familiar", "alias": "violenciafamiliar", "imageName": "penal/penal0.png"}
     ]
 }
 

@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 
 WORKDIR /home/web/sources
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8088"]
+CMD ["uvicorn", "project.asgi:application", "--host", "0.0.0.0", "--port", "8000"]

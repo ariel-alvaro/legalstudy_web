@@ -128,7 +128,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         if (self.client_request_state == WSMClientState.CellphoneRequest and self.client_data["cellphone"] == None):
             
 
-            if (not re.match(r'^\d+$', data["text"]) ):
+            if (not re.match(r'^\d+$', data["text"]) and len(data["text"]) <= 20  ):
                 return True
             
             self.client_data["cellphone"] = data["text"]

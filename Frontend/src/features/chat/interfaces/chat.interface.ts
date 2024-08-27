@@ -6,7 +6,7 @@ export interface IChatData{
 
 export interface IClientData{
     name: string
-    cellphone: number
+    cellphone: string
 }
 
 export interface IMessageProp{

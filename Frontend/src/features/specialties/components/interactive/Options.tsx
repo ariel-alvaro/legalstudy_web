@@ -67,9 +67,10 @@ export default function Options(){
 
             <div>
 
-                <button className=" text-boxes h-full border-zinc-600 grow border-r-2 border-l-2 rounded-l-lg hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Laboral)}}>LABORAL</button>
-                <button className=" text-boxes h-full border-zinc-600 grow border-r-2 hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Civil)}}>CIVIL</button>
-                <button className=" text-boxes h-full border-zinc-600 grow border-r-2 rounded-r-lg hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Familiar)}}>FAMILIA</button>
+                <button className="text-base laptop:w-32 text-boxes h-full border-zinc-600 grow border-r-2 border-l-2 rounded-l-lg hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Laboral)}}>LABORAL</button>
+                <button className="text-base laptop:w-32 text-boxes h-full border-zinc-600 grow border-r-2 hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Civil)}}>CIVIL</button>
+                <button className="text-base laptop:w-32 text-boxes h-full border-zinc-600 grow border-r-2  hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Familiar)}}>FAMILIA</button>
+                <button className="text-base laptop:w-32 text-boxes h-full border-zinc-600 grow border-r-2 rounded-r-lg hover:bg-secondary focus:bg-secondary p-3" onClick={()=>{handleSection(SectionEnum.Penal)}}>PENAL</button>
 
             </div>
             
@@ -91,7 +92,7 @@ export default function Options(){
 
             :
  
-            <section className="overflow-scroll mb-10 laptop:mb-0 flex flex-col gap-2 w-[26rem] laptop:w-[60rem] laptop:h-[33rem] monitor:h-[34rem] bigmonitor:h-[42rem] relative">
+            <section className="center laptop:overflow-scroll mb-10 laptop:mb-0 flex flex-col gap-2 w-[26rem] laptop:w-[60rem] laptop:h-[33rem] monitor:h-[34rem] bigmonitor:h-[42rem] relative">
                 
                 {!isCalculo ? 
                     (questions.options).map((question, index)=>(
@@ -103,7 +104,7 @@ export default function Options(){
                         <div key={index} className="element bg-boxes cursor-pointer mx-auto p-2 laptop:p-7 w-96 rounded-lg border laptop:w-[55rem] mb-4">
                             
                             <div className="space-y-4 ">
-                                <h2 className="text-2xl font-bold text-center" onClick={()=>{handleQuestion(Object.keys(question)[0])}}>{Object.keys(question)[0]}</h2>
+                                <h2 className="text-2xl lowercase font-bold first-letter:capitalize text-center" onClick={()=>{handleQuestion(Object.keys(question)[0])}}>{Object.keys(question)[0]}</h2>
                                 {selectedQuestion ==  Object.keys(question)[0] ?
                                 <p className="appear text-text1 center text-muted-foreground">
                                     <ConvertJumpText text={Object.values(question)[0]}/>

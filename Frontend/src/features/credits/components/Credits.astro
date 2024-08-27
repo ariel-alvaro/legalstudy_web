@@ -1,0 +1,23 @@
+---
+import { IoLogoGithub } from "react-icons/io";
+import UrlWrapper from "shared/components/UrlWrapper.astro";
+
+const arielUrl = "https://www.arielalvaro.com"
+const arielGitUrl = "https://www.github.com/arielalvaro57666"
+---
+
+<section class=" w-full h-32 laptop:h-16 center-row-nomid mt-10">
+    <div class="w-72 h-12 bg-boxes center rounded-lg gap-2">
+        <h3 class=" font-mono text-sm">Desarrollado por</h3>
+    
+        <UrlWrapper url={arielUrl}>
+            <img class="suave w-8 h-8 cursor-pointer hover:scale-125" src="/static/iconos/ariel_logo.png"/>
+        </UrlWrapper>
+
+        <UrlWrapper url={arielGitUrl}>
+            <IoLogoGithub className="suave hover:scale-125 h-7 w-10"/>
+        </UrlWrapper>
+        
+    </div>
+    
+</section>

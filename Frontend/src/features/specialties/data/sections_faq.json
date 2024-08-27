@@ -235,8 +235,24 @@
         ]
         }
 
+    },
+    "Penal": {
+        "violenciafamiliar": {
+        "title": "VIOLENCIA FAMILIAR",
+        "options": [
+            {
+            "¿Defensa Penal en casos de denuncia por violencia familiar?": ""
+            },
+            {
+            "Restricciones/Exclusión del hogar": ""
+            },
+            {
+            "Acuerdos judiciales de cuota alimentaria y régimen de visitas en casos de violencia/restricción.": ""
+            }
+        ]
+
+        }
+      
     }
-      
-      
     
 }

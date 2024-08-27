@@ -2,6 +2,7 @@
 Frontend
 - Enviroment Configuration
 - Recursive URL setter
+- Credits
 Backend
 - removed final / in ws routers
 - Enviroment Configuration

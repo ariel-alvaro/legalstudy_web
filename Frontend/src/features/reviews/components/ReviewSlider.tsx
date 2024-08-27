@@ -13,6 +13,7 @@ import type { IReview } from "../interfaces/reviews.interface";
 // Utilities
 import { Reviews } from "../utils/reviews";
 
+
 export default function ReviewSlider(){
     const REVIEW_BOX_WIDTH = 328;
     const reviewsRef = useRef<HTMLDivElement>(null);
@@ -67,17 +68,18 @@ export default function ReviewSlider(){
 
     return (
         <section className="center-col gap-10 z-10">
-
+            
             <section ref={reviewsRef} className="w-[20rem] laptop:w-[61rem] flex shrink-0 overflow-hidden gap-2 h-[13.1rem]">
                 {
                     reviews.map((review, index)=>(
                         <ReviewBox key={index} review={review}/>
                     ))
                 }
+            
             </section>
-            <div className="flex z-30 mb-10">
-                <IoIosArrowBack className="w-10 h-10 text-boxes cursor-pointer" onClick={()=>{scroll(false, "left",true)}}/>
-                <IoIosArrowForward className="w-10 h-10 text-boxes cursor-pointer" onClick={()=>{scroll(false, "right", true)}}/>
+            <div className="flex z-50 mb-10">
+                <IoIosArrowBack className="w-10 h-20 text-boxes cursor-pointer" onClick={()=>{scroll(false, "left",true)}}/>
+                <IoIosArrowForward className="w-10 h-20 text-boxes cursor-pointer" onClick={()=>{scroll(false, "right", true)}}/>
             </div>
 
         </section>

@@ -8,10 +8,6 @@ APP_VERSION = "1.0.0"
 ENVIRONMENT = config('ENVIRONMENT', default=Environment.Development)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#SECRET_KEY = 'django-insecure--&mwc-d&y^#of@@+w+rrlu9qo%apr&0k%a#@_duxor1eo82+l0'
-
-
-
 
 if ENVIRONMENT == Environment.Development:
     SECRET_KEY = 'SK'
@@ -20,7 +16,7 @@ if ENVIRONMENT == Environment.Development:
 else:
     SECRET_KEY = config('SECRET_KEY', default=None)
     DEBUG = False
-    ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='')
+    ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
 
 
 # Application definition
@@ -48,13 +44,14 @@ ASGI_APPLICATION = 'project.asgi.application'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware'
+    
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -142,9 +139,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 TOKEN_EXPIRATION_DAYS = 6
 
 #CORS
-
-# CORS_ALLOW_CREDENTIALS = True
-# CORS_ORIGIN_ALLOW_ALL = True
+if (ENVIRONMENT == Environment.Development):
+    CORS_ALLOW_CREDENTIALS = True
+    CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='http://estudiojuridicoad.com').split(',')
+    CORS_ALLOW_ALL_ORIGINS = True
 # ---------------------------------CHANNEL---------------------------------
 
 
@@ -164,8 +162,11 @@ LOGS = {
     "PATH": os.path.join(BASE_DIR, "logs")
 }
 
-SESSION_COOKIE_SECURE = False  # Puede ser False en desarrollo
+SESSION_COOKIE_SECURE = True  # Puede ser False en desarrollo
 CSRF_COOKIE_SECURE = False  
+SESSION_COOKIE_DOMAIN = 'estudiojuridicoad.com'
+CSRF_COOKIE_DOMAIN = 'estudiojuridicoad.com'
+CSRF_TRUSTED_ORIGINS = ['http://estudiojuridicoad.com', 'https://estudiojuridicoad.com']
 
 #TIME ZONE
 TIME_ZONE = 'America/Argentina/Buenos_Aires'
