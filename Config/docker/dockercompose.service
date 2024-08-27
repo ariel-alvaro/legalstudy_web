@@ -1,0 +1,14 @@
+[Unit]
+Description=Mi servicio de Docker Compose
+After=docker.service
+Requires=docker.service
+
+[Service]
+WorkingDirectory=/home/ubuntu/legalstudy_web
+Command=/usr/bin/docker-compose
+Restart=always
+User=ubuntu
+Environment=DOCKER_COMPOSE_FILE=/home/ubuntu/legalstudy_web/docker-compose.yml
+
+[Install]
+WantedBy=multi-user.target
