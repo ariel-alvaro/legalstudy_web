@@ -36,7 +36,13 @@ class TokenAuthMiddleware:
       
         if(headers.get(b"cookie")):
 
-            token_name, token_key = headers[b"cookie"].decode("utf-8").split('=')
+            for cookie in cookies:
+                cookie = cookie.strip()  # Elimina espacios en blanco alrededor de la cookie
+                if '=' in cookie:
+                    name, key = cookie.split('=', 1)
+                    if name == "tkv1":
+                        token_name, token_key = name, key
+                        break
       
             if (token_name == "tkv1"):
                 try:

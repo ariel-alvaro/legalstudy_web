@@ -53,7 +53,6 @@ services:
 
     volumes:
       - mysqldata:/var/lib/mysql
-      - ./Config/init-db:/docker-entrypoint-initdb.d
     
     networks:
       - dev-network

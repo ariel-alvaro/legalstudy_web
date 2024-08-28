@@ -1,14 +1,15 @@
 [Unit]
-Description=Mi servicio de Docker Compose
-After=docker.service
+Description=Docker Compose Application Service
 Requires=docker.service
+After=docker.service
 
 [Service]
-WorkingDirectory=/home/ubuntu/legalstudy_web
-Command=/usr/bin/docker-compose
-Restart=always
-User=ubuntu
-Environment=DOCKER_COMPOSE_FILE=/home/ubuntu/legalstudy_web/docker-compose.yml
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/ruta/a/tu/carpeta
+ExecStart=/usr/local/bin/docker-compose up -d
+ExecStop=/usr/local/bin/docker-compose down
+TimeoutStartSec=0
 
 [Install]
 WantedBy=multi-user.target
