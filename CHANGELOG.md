@@ -1,11 +1,19 @@
+## [1.1] - 2025-8-29
+Frontend
+- Credits
+- New Title, new social media description
+- favicon
+Backend
+- Fix token cookie search for websocket
+
 ## [1.0] - 2025-8-3
 Frontend
 - Enviroment Configuration
 - Recursive URL setter
-- Credits
 Backend
 - removed final / in ws routers
 - Enviroment Configuration
+
 
 ## [0.9] - 2025-8-2
 Frontend
