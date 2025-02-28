@@ -9,9 +9,9 @@ export default {
 
 		},
 		backgroundImage:{
-			'header': "url('/static/header/header.jpg')",
-			'stats': "url('/static/other/statistics.jpg')",
-			'building': "url('/static/other/building.png')"
+			'header': "url('/static/header/header.webp')",
+			'stats': "url('/static/other/statistics.webp')",
+			'building': "url('/static/other/building.webp')"
 		},
 		extend: {
 			colors: {

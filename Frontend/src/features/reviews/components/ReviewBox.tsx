@@ -15,7 +15,7 @@ export default function ReviewBox({review}: {review: IReview}){
             <div className="flex gap-4 justify-between">
 
                 <div className="w-full flex items-center gap-3 h-10">
-                    <img className="rounded-full" src={review.imageUrl}></img>
+                    <img alt="profile picture" className="rounded-full" src={review.imageUrl}></img>
                     <div>
                         <h3 className="font-semibold text-sm font-sans">{review.name}</h3>
                         <p className="font-thin text-xs">{review.date}</p>

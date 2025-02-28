@@ -267,7 +267,7 @@ export default function Chat({actual_user, chat_data}: {actual_user:string, chat
                 {/* Head */}
                 <header className={` ${open ? "h-[10%]" : "h-10"} w-full bg-boxes flex items-center p-7 gap-4 laptop:h-18 `}>
                     <div className="w-10 h-10 rounded-full">
-                        <img src="/static/iconos/logoBG.png" className=" rounded-full"></img>
+                        <img alt="logo" src="/static/iconos/logoBG.png" className=" rounded-full"></img>
                     </div>
                     <h3 className="text-white text-xl">Abogado en linea</h3>
                     <span className="h-3 w-3 rounded-full bg-green-500 opacity-75"></span>
