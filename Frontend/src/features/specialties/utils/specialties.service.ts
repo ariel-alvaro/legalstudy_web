@@ -1,5 +1,6 @@
 // JSON
-import options from '../data/options.json';
+
+import { SPECIALTIES } from '../data/options';
 import sections from '../data/sections_faq.json';
 
 // Enums
@@ -21,8 +22,7 @@ export default class Specialties {
 
     //Return the section options
     public static list_options(section: string): IOption[]{
-        
-        return (options as any)[section];
+        return (SPECIALTIES as any)[section];
     }
 
     //Return the faq of the option selected

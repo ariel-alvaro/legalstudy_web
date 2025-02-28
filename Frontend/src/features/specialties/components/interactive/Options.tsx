@@ -82,7 +82,7 @@ export default function Options(){
                     options.map((option, index)=>(
                         <div key={index} className="center w-60 h-60 monitor:w-64 monitor:h-52 bigmonitor:w-80 bigmonitor:h-80 rounded-lg bg-black relative cursor-pointer" onClick={()=>{handleSelection(option.alias)}}>
                             <h2 className="uppercase font-bold text-3xl text-center z-10">{option.title}</h2>
-                            <img src={`/static/${option.imageName}`} className="w-full h-full absolute opacity-65 rounded-lg"></img>
+                            <img alt="option" src={`/static/${option.imageName}`} className="w-full h-full absolute opacity-65 rounded-lg"></img>
                             
                         </div>
                     ))
